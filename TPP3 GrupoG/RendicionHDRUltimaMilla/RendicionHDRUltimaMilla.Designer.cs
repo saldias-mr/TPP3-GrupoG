@@ -34,10 +34,10 @@
             hdrPendiente = new Label();
             guiaAsociada = new Label();
             hdrPendienteLIST = new ListView();
-            guiaAsociadaLIST = new ListView();
             numHDR = new ColumnHeader();
             tipoHDR = new ColumnHeader();
             domicilioVisitar = new ColumnHeader();
+            guiaAsociadaLIST = new ListView();
             resultado = new Label();
             resultadoCMB = new ComboBox();
             motivoIncidencia = new Label();
@@ -49,43 +49,48 @@
             // dniFletero
             // 
             dniFletero.AutoSize = true;
-            dniFletero.Location = new Point(31, 25);
+            dniFletero.Location = new Point(22, 15);
+            dniFletero.Margin = new Padding(2, 0, 2, 0);
             dniFletero.Name = "dniFletero";
-            dniFletero.Size = new Size(102, 25);
+            dniFletero.Size = new Size(66, 15);
             dniFletero.TabIndex = 0;
             dniFletero.Text = "DNI Fletero";
             // 
             // buscarFletero
             // 
-            buscarFletero.Location = new Point(311, 23);
+            buscarFletero.Location = new Point(218, 14);
+            buscarFletero.Margin = new Padding(2, 2, 2, 2);
             buscarFletero.Name = "buscarFletero";
-            buscarFletero.Size = new Size(112, 34);
+            buscarFletero.Size = new Size(78, 24);
             buscarFletero.TabIndex = 1;
             buscarFletero.Text = "Buscar";
             buscarFletero.UseVisualStyleBackColor = true;
             // 
             // dniFleteroTXT
             // 
-            dniFleteroTXT.Location = new Point(139, 25);
+            dniFleteroTXT.Location = new Point(97, 15);
+            dniFleteroTXT.Margin = new Padding(2, 2, 2, 2);
             dniFleteroTXT.Name = "dniFleteroTXT";
-            dniFleteroTXT.Size = new Size(150, 31);
+            dniFleteroTXT.Size = new Size(106, 23);
             dniFleteroTXT.TabIndex = 2;
             // 
             // hdrPendiente
             // 
             hdrPendiente.AutoSize = true;
-            hdrPendiente.Location = new Point(31, 95);
+            hdrPendiente.Location = new Point(22, 57);
+            hdrPendiente.Margin = new Padding(2, 0, 2, 0);
             hdrPendiente.Name = "hdrPendiente";
-            hdrPendiente.Size = new Size(118, 25);
+            hdrPendiente.Size = new Size(77, 15);
             hdrPendiente.TabIndex = 3;
             hdrPendiente.Text = "Hojas de ruta";
             // 
             // guiaAsociada
             // 
             guiaAsociada.AutoSize = true;
-            guiaAsociada.Location = new Point(397, 98);
+            guiaAsociada.Location = new Point(453, 57);
+            guiaAsociada.Margin = new Padding(2, 0, 2, 0);
             guiaAsociada.Name = "guiaAsociada";
-            guiaAsociada.Size = new Size(55, 25);
+            guiaAsociada.Size = new Size(36, 15);
             guiaAsociada.TabIndex = 4;
             guiaAsociada.Text = "Guías";
             guiaAsociada.Click += guiaAsociada_Click;
@@ -94,24 +99,14 @@
             // 
             hdrPendienteLIST.Columns.AddRange(new ColumnHeader[] { numHDR, tipoHDR, domicilioVisitar });
             hdrPendienteLIST.FullRowSelect = true;
-            hdrPendienteLIST.Location = new Point(31, 126);
+            hdrPendienteLIST.Location = new Point(22, 76);
+            hdrPendienteLIST.Margin = new Padding(2, 2, 2, 2);
             hdrPendienteLIST.MultiSelect = false;
             hdrPendienteLIST.Name = "hdrPendienteLIST";
-            hdrPendienteLIST.Size = new Size(274, 255);
+            hdrPendienteLIST.Size = new Size(303, 155);
             hdrPendienteLIST.TabIndex = 5;
             hdrPendienteLIST.UseCompatibleStateImageBehavior = false;
             hdrPendienteLIST.View = View.Details;
-            // 
-            // guiaAsociadaLIST
-            // 
-            guiaAsociadaLIST.FullRowSelect = true;
-            guiaAsociadaLIST.Location = new Point(397, 126);
-            guiaAsociadaLIST.MultiSelect = false;
-            guiaAsociadaLIST.Name = "guiaAsociadaLIST";
-            guiaAsociadaLIST.Size = new Size(172, 255);
-            guiaAsociadaLIST.TabIndex = 6;
-            guiaAsociadaLIST.UseCompatibleStateImageBehavior = false;
-            guiaAsociadaLIST.View = View.Details;
             // 
             // numHDR
             // 
@@ -128,12 +123,25 @@
             domicilioVisitar.Text = "Domicilio";
             domicilioVisitar.Width = 90;
             // 
+            // guiaAsociadaLIST
+            // 
+            guiaAsociadaLIST.FullRowSelect = true;
+            guiaAsociadaLIST.Location = new Point(453, 76);
+            guiaAsociadaLIST.Margin = new Padding(2, 2, 2, 2);
+            guiaAsociadaLIST.MultiSelect = false;
+            guiaAsociadaLIST.Name = "guiaAsociadaLIST";
+            guiaAsociadaLIST.Size = new Size(122, 155);
+            guiaAsociadaLIST.TabIndex = 6;
+            guiaAsociadaLIST.UseCompatibleStateImageBehavior = false;
+            guiaAsociadaLIST.View = View.Details;
+            // 
             // resultado
             // 
             resultado.AutoSize = true;
-            resultado.Location = new Point(31, 400);
+            resultado.Location = new Point(22, 240);
+            resultado.Margin = new Padding(2, 0, 2, 0);
             resultado.Name = "resultado";
-            resultado.Size = new Size(94, 25);
+            resultado.Size = new Size(62, 15);
             resultado.TabIndex = 7;
             resultado.Text = "Resultado:";
             // 
@@ -141,50 +149,55 @@
             // 
             resultadoCMB.FormattingEnabled = true;
             resultadoCMB.Items.AddRange(new object[] { "Entregada", "Retirada", "No entregada", "No retirada", "Incidencia" });
-            resultadoCMB.Location = new Point(123, 392);
+            resultadoCMB.Location = new Point(86, 235);
+            resultadoCMB.Margin = new Padding(2, 2, 2, 2);
             resultadoCMB.Name = "resultadoCMB";
-            resultadoCMB.Size = new Size(182, 33);
+            resultadoCMB.Size = new Size(129, 23);
             resultadoCMB.TabIndex = 8;
             // 
             // motivoIncidencia
             // 
             motivoIncidencia.AutoSize = true;
-            motivoIncidencia.Location = new Point(31, 439);
+            motivoIncidencia.Location = new Point(22, 271);
+            motivoIncidencia.Margin = new Padding(2, 0, 2, 0);
             motivoIncidencia.Name = "motivoIncidencia";
-            motivoIncidencia.Size = new Size(73, 25);
+            motivoIncidencia.Size = new Size(48, 15);
             motivoIncidencia.TabIndex = 9;
             motivoIncidencia.Text = "Motivo:";
             // 
             // motivoIncidenciaTXT
             // 
-            motivoIncidenciaTXT.Location = new Point(123, 439);
+            motivoIncidenciaTXT.Location = new Point(86, 263);
+            motivoIncidenciaTXT.Margin = new Padding(2, 2, 2, 2);
             motivoIncidenciaTXT.Name = "motivoIncidenciaTXT";
-            motivoIncidenciaTXT.Size = new Size(182, 31);
+            motivoIncidenciaTXT.Size = new Size(129, 23);
             motivoIncidenciaTXT.TabIndex = 10;
             // 
             // confirmarRendicion
             // 
-            confirmarRendicion.Location = new Point(311, 482);
+            confirmarRendicion.Location = new Point(432, 278);
+            confirmarRendicion.Margin = new Padding(2, 2, 2, 2);
             confirmarRendicion.Name = "confirmarRendicion";
-            confirmarRendicion.Size = new Size(112, 34);
+            confirmarRendicion.Size = new Size(78, 31);
             confirmarRendicion.TabIndex = 11;
             confirmarRendicion.Text = "Confirmar";
             confirmarRendicion.UseVisualStyleBackColor = true;
             // 
             // emitirResumen
             // 
-            emitirResumen.Location = new Point(429, 482);
+            emitirResumen.Location = new Point(514, 278);
+            emitirResumen.Margin = new Padding(2, 2, 2, 2);
             emitirResumen.Name = "emitirResumen";
-            emitirResumen.Size = new Size(140, 34);
+            emitirResumen.Size = new Size(98, 31);
             emitirResumen.TabIndex = 12;
             emitirResumen.Text = "Emitir resumen";
             emitirResumen.UseVisualStyleBackColor = true;
             // 
             // Rendicion_de_HDR_Ultima_Milla
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(573, 528);
+            ClientSize = new Size(623, 317);
             Controls.Add(emitirResumen);
             Controls.Add(confirmarRendicion);
             Controls.Add(motivoIncidenciaTXT);
@@ -198,6 +211,7 @@
             Controls.Add(dniFleteroTXT);
             Controls.Add(buscarFletero);
             Controls.Add(dniFletero);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "Rendicion_de_HDR_Ultima_Milla";
             Text = "Rendición de HDR Última Milla";
             ResumeLayout(false);

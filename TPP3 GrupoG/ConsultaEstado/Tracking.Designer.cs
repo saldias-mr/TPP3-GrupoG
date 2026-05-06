@@ -46,29 +46,29 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(35, 92);
+            label1.Location = new Point(31, 69);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(192, 20);
+            label1.Size = new Size(151, 15);
             label1.TabIndex = 0;
             label1.Text = "Ingrese N° de Identificador ";
             label1.Click += label1_Click;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(261, 92);
+            textBox1.Location = new Point(228, 69);
             textBox1.Margin = new Padding(2);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(418, 27);
+            textBox1.Size = new Size(366, 23);
             textBox1.TabIndex = 1;
             textBox1.TextChanged += textBox1_TextChanged;
             // 
             // button1
             // 
-            button1.Location = new Point(694, 92);
+            button1.Location = new Point(607, 69);
             button1.Margin = new Padding(2);
             button1.Name = "button1";
-            button1.Size = new Size(90, 27);
+            button1.Size = new Size(79, 23);
             button1.TabIndex = 2;
             button1.Text = "Buscar";
             button1.UseVisualStyleBackColor = true;
@@ -77,10 +77,10 @@
             // listView1
             // 
             listView1.Columns.AddRange(new ColumnHeader[] { Fecha, Hora, Punto_Operativo, Estado });
-            listView1.Location = new Point(35, 205);
+            listView1.Location = new Point(31, 154);
             listView1.Margin = new Padding(2);
             listView1.Name = "listView1";
-            listView1.Size = new Size(749, 205);
+            listView1.Size = new Size(656, 155);
             listView1.TabIndex = 4;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
@@ -109,37 +109,37 @@
             // lbl_NameTutasa
             // 
             lbl_NameTutasa.Font = new Font("Segoe UI", 16F);
-            lbl_NameTutasa.Location = new Point(24, 9);
+            lbl_NameTutasa.Location = new Point(21, 7);
             lbl_NameTutasa.Name = "lbl_NameTutasa";
-            lbl_NameTutasa.Size = new Size(172, 47);
+            lbl_NameTutasa.Size = new Size(150, 35);
             lbl_NameTutasa.TabIndex = 11;
             lbl_NameTutasa.Text = "TUTASA S.A";
             // 
             // label3
             // 
             label3.Font = new Font("Segoe UI", 16F);
-            label3.Location = new Point(192, 9);
+            label3.Location = new Point(168, 7);
             label3.Name = "label3";
-            label3.Size = new Size(608, 47);
+            label3.Size = new Size(532, 35);
             label3.TabIndex = 12;
             label3.Text = "Consultar estado e historial de una guía (tracking)";
             label3.Click += label3_Click;
             // 
             // label2
             // 
-            label2.Location = new Point(35, 449);
+            label2.Location = new Point(31, 337);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(323, 27);
+            label2.Size = new Size(283, 20);
             label2.TabIndex = 13;
             label2.Text = "Ingrese el Codigo que figura en la Encomienda";
             // 
             // label4
             // 
             label4.Font = new Font("Segoe UI", 12F);
-            label4.Location = new Point(35, 153);
+            label4.Location = new Point(31, 115);
             label4.Name = "label4";
-            label4.Size = new Size(429, 40);
+            label4.Size = new Size(375, 30);
             label4.TabIndex = 14;
             label4.Text = "Informacion de Movimientos de la Encomienda";
             // 
@@ -147,18 +147,19 @@
             // 
             Btn_Volver.BackColor = Color.DarkRed;
             Btn_Volver.ForeColor = SystemColors.ButtonHighlight;
-            Btn_Volver.Location = new Point(660, 427);
+            Btn_Volver.Location = new Point(578, 320);
+            Btn_Volver.Margin = new Padding(3, 2, 3, 2);
             Btn_Volver.Name = "Btn_Volver";
-            Btn_Volver.Size = new Size(124, 49);
+            Btn_Volver.Size = new Size(108, 37);
             Btn_Volver.TabIndex = 62;
             Btn_Volver.Text = "Cancelar/Volver";
             Btn_Volver.UseVisualStyleBackColor = false;
             // 
             // Tracking
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(812, 487);
+            ClientSize = new Size(710, 365);
             Controls.Add(Btn_Volver);
             Controls.Add(label4);
             Controls.Add(label2);
