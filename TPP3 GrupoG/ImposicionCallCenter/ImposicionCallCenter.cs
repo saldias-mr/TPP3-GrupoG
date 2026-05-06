@@ -19,5 +19,25 @@ namespace TPP3_GrupoG.ImposicionCallCenter
         {
 
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_IngreseDNI_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ImposicionCallCenter_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
