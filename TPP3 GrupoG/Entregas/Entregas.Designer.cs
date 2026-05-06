@@ -274,6 +274,7 @@
             Margin = new Padding(2);
             Name = "Entregas";
             Text = "Entregas";
+            Load += Entregas_Load;
             ResumeLayout(false);
             PerformLayout();
         }

@@ -67,6 +67,7 @@
             label3.Size = new Size(579, 47);
             label3.TabIndex = 10;
             label3.Text = "-Registro de Entrega en Centro De Distribucion ";
+            label3.Click += label3_Click;
             // 
             // button3
             // 

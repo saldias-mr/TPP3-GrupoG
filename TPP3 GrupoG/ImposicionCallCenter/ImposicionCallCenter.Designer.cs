@@ -75,7 +75,7 @@
             // textBox1
             // 
             textBox1.Location = new Point(33, 199);
-            textBox1.Margin = new Padding(2, 2, 2, 2);
+            textBox1.Margin = new Padding(2);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(264, 27);
             textBox1.TabIndex = 0;
@@ -516,9 +516,10 @@
             Controls.Add(lbl_NameTutasa);
             Controls.Add(label1);
             Controls.Add(textBox1);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "ImposicionCallCenter";
             Text = "ImposicionCallCenter";
+            Load += ImposicionCallCenter_Load;
             ResumeLayout(false);
             PerformLayout();
         }

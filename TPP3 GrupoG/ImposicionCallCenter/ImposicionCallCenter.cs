@@ -34,5 +34,10 @@ namespace TPP3_GrupoG.ImposicionCallCenter
         {
 
         }
+
+        private void ImposicionCallCenter_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

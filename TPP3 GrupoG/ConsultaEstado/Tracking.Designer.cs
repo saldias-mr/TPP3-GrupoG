@@ -123,6 +123,7 @@
             label3.Size = new Size(608, 47);
             label3.TabIndex = 12;
             label3.Text = "Consultar estado e historial de una guía (tracking)";
+            label3.Click += label3_Click;
             // 
             // label2
             // 

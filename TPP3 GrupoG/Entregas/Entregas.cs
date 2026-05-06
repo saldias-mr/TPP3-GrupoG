@@ -44,5 +44,10 @@ namespace TPP3_GrupoG.Entregas
         {
 
         }
+
+        private void Entregas_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

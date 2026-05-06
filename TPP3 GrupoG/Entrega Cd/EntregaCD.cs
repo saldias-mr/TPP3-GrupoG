@@ -19,5 +19,10 @@ namespace TPP3_GrupoG.Entrega_Cd
         {
 
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
