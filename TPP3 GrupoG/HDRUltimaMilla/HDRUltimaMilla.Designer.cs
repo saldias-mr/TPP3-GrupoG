@@ -52,11 +52,12 @@
             button5 = new Button();
             button6 = new Button();
             groupBox1 = new GroupBox();
-            textBox1 = new TextBox();
-            label1 = new Label();
+            button7 = new Button();
             label2 = new Label();
             textBox2 = new TextBox();
-            button7 = new Button();
+            label1 = new Label();
+            dateTimePicker1 = new DateTimePicker();
+            dateTimePicker2 = new DateTimePicker();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -64,45 +65,50 @@
             // 
             tutsasa.AutoSize = true;
             tutsasa.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            tutsasa.Location = new Point(22, 9);
+            tutsasa.Location = new Point(31, 15);
+            tutsasa.Margin = new Padding(4, 0, 4, 0);
             tutsasa.Name = "tutsasa";
-            tutsasa.Size = new Size(102, 21);
+            tutsasa.Size = new Size(155, 32);
             tutsasa.TabIndex = 0;
             tutsasa.Text = "TUTASA S.A.";
             // 
             // HDRUltimaMillaTitulo
             // 
             HDRUltimaMillaTitulo.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            HDRUltimaMillaTitulo.Location = new Point(303, 9);
-            HDRUltimaMillaTitulo.MaximumSize = new Size(500, 500);
+            HDRUltimaMillaTitulo.Location = new Point(433, 15);
+            HDRUltimaMillaTitulo.Margin = new Padding(4, 0, 4, 0);
+            HDRUltimaMillaTitulo.MaximumSize = new Size(714, 833);
             HDRUltimaMillaTitulo.Name = "HDRUltimaMillaTitulo";
-            HDRUltimaMillaTitulo.Size = new Size(398, 35);
+            HDRUltimaMillaTitulo.Size = new Size(569, 58);
             HDRUltimaMillaTitulo.TabIndex = 1;
             HDRUltimaMillaTitulo.Text = "HDR Última Milla";
             // 
             // FleterosDisponibles
             // 
             FleterosDisponibles.FormattingEnabled = true;
-            FleterosDisponibles.Location = new Point(22, 66);
+            FleterosDisponibles.Location = new Point(31, 110);
+            FleterosDisponibles.Margin = new Padding(4, 5, 4, 5);
             FleterosDisponibles.Name = "FleterosDisponibles";
-            FleterosDisponibles.Size = new Size(314, 23);
+            FleterosDisponibles.Size = new Size(447, 33);
             FleterosDisponibles.TabIndex = 2;
             // 
             // Fletero
             // 
             Fletero.AutoSize = true;
-            Fletero.Location = new Point(22, 48);
+            Fletero.Location = new Point(31, 80);
+            Fletero.Margin = new Padding(4, 0, 4, 0);
             Fletero.Name = "Fletero";
-            Fletero.Size = new Size(48, 15);
+            Fletero.Size = new Size(74, 25);
             Fletero.TabIndex = 3;
             Fletero.Text = "Fleteros";
             // 
             // EstadoGuias
             // 
             EstadoGuias.Columns.AddRange(new ColumnHeader[] { NdeGuía, TiempoSinAsignar, Dirección, Tipopaquete });
-            EstadoGuias.Location = new Point(36, 298);
+            EstadoGuias.Location = new Point(51, 497);
+            EstadoGuias.Margin = new Padding(4, 5, 4, 5);
             EstadoGuias.Name = "EstadoGuias";
-            EstadoGuias.Size = new Size(423, 227);
+            EstadoGuias.Size = new Size(603, 376);
             EstadoGuias.TabIndex = 6;
             EstadoGuias.UseCompatibleStateImageBehavior = false;
             EstadoGuias.View = View.Details;
@@ -116,7 +122,7 @@
             // TiempoSinAsignar
             // 
             TiempoSinAsignar.Text = "Tiempo Sin Asignación";
-            TiempoSinAsignar.Width = 150;
+            TiempoSinAsignar.Width = 200;
             // 
             // Dirección
             // 
@@ -126,14 +132,15 @@
             // Tipopaquete
             // 
             Tipopaquete.Text = "Tipo de Paquete";
-            Tipopaquete.Width = 100;
+            Tipopaquete.Width = 150;
             // 
             // detalleHDR
             // 
             detalleHDR.AutoSize = true;
-            detalleHDR.Location = new Point(36, 280);
+            detalleHDR.Location = new Point(51, 467);
+            detalleHDR.Margin = new Padding(4, 0, 4, 0);
             detalleHDR.Name = "detalleHDR";
-            detalleHDR.Size = new Size(70, 15);
+            detalleHDR.Size = new Size(108, 25);
             detalleHDR.TabIndex = 7;
             detalleHDR.Text = "Detalle HDR";
             // 
@@ -142,18 +149,20 @@
             tipodeservicio.AutoSize = true;
             tipodeservicio.Enabled = false;
             tipodeservicio.ImageAlign = ContentAlignment.TopCenter;
-            tipodeservicio.Location = new Point(11, 19);
+            tipodeservicio.Location = new Point(16, 32);
+            tipodeservicio.Margin = new Padding(4, 0, 4, 0);
             tipodeservicio.Name = "tipodeservicio";
-            tipodeservicio.Size = new Size(91, 15);
+            tipodeservicio.Size = new Size(138, 25);
             tipodeservicio.TabIndex = 11;
             tipodeservicio.Text = "Tipo de Servicio";
             // 
             // Retiro
             // 
             Retiro.AutoSize = true;
-            Retiro.Location = new Point(11, 37);
+            Retiro.Location = new Point(16, 62);
+            Retiro.Margin = new Padding(4, 5, 4, 5);
             Retiro.Name = "Retiro";
-            Retiro.Size = new Size(57, 19);
+            Retiro.Size = new Size(84, 29);
             Retiro.TabIndex = 12;
             Retiro.Text = "Retiro";
             Retiro.UseVisualStyleBackColor = true;
@@ -161,18 +170,20 @@
             // Distribucion
             // 
             Distribucion.AutoSize = true;
-            Distribucion.Location = new Point(74, 37);
+            Distribucion.Location = new Point(106, 62);
+            Distribucion.Margin = new Padding(4, 5, 4, 5);
             Distribucion.Name = "Distribucion";
-            Distribucion.Size = new Size(90, 19);
+            Distribucion.Size = new Size(133, 29);
             Distribucion.TabIndex = 13;
             Distribucion.Text = "Distribución";
             Distribucion.UseVisualStyleBackColor = true;
             // 
             // GenerarHDR
             // 
-            GenerarHDR.Location = new Point(866, 541);
+            GenerarHDR.Location = new Point(1327, 901);
+            GenerarHDR.Margin = new Padding(4, 5, 4, 5);
             GenerarHDR.Name = "GenerarHDR";
-            GenerarHDR.Size = new Size(126, 23);
+            GenerarHDR.Size = new Size(180, 38);
             GenerarHDR.TabIndex = 14;
             GenerarHDR.Text = "Generar HDR";
             GenerarHDR.UseVisualStyleBackColor = true;
@@ -181,9 +192,10 @@
             // listView1
             // 
             listView1.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4 });
-            listView1.Location = new Point(660, 298);
+            listView1.Location = new Point(943, 497);
+            listView1.Margin = new Padding(4, 5, 4, 5);
             listView1.Name = "listView1";
-            listView1.Size = new Size(356, 227);
+            listView1.Size = new Size(564, 376);
             listView1.TabIndex = 15;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
@@ -196,7 +208,7 @@
             // columnHeader2
             // 
             columnHeader2.Text = "Tiempo Sin Asignación";
-            columnHeader2.Width = 150;
+            columnHeader2.Width = 200;
             // 
             // columnHeader3
             // 
@@ -206,111 +218,129 @@
             // columnHeader4
             // 
             columnHeader4.Text = "Tipo de Paquete";
-            columnHeader4.Width = 100;
+            columnHeader4.Width = 150;
             // 
             // button1
             // 
-            button1.Location = new Point(465, 357);
+            button1.Location = new Point(664, 595);
+            button1.Margin = new Padding(4, 5, 4, 5);
             button1.Name = "button1";
-            button1.Size = new Size(189, 23);
+            button1.Size = new Size(270, 38);
             button1.TabIndex = 16;
             button1.Text = "Agregar >>>";
             button1.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
-            button4.Location = new Point(465, 424);
+            button4.Location = new Point(664, 707);
+            button4.Margin = new Padding(4, 5, 4, 5);
             button4.Name = "button4";
-            button4.Size = new Size(189, 23);
+            button4.Size = new Size(270, 38);
             button4.TabIndex = 17;
             button4.Text = "<<< Quitar";
             button4.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
-            button5.Location = new Point(465, 395);
+            button5.Location = new Point(664, 658);
+            button5.Margin = new Padding(4, 5, 4, 5);
             button5.Name = "button5";
-            button5.Size = new Size(189, 23);
+            button5.Size = new Size(270, 38);
             button5.TabIndex = 18;
             button5.Text = "Agregar todos >>>";
             button5.UseVisualStyleBackColor = true;
             // 
             // button6
             // 
-            button6.Location = new Point(465, 453);
+            button6.Location = new Point(664, 755);
+            button6.Margin = new Padding(4, 5, 4, 5);
             button6.Name = "button6";
-            button6.Size = new Size(189, 23);
+            button6.Size = new Size(270, 38);
             button6.TabIndex = 19;
             button6.Text = "<<< Quitar todos";
             button6.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(dateTimePicker2);
+            groupBox1.Controls.Add(dateTimePicker1);
             groupBox1.Controls.Add(button7);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(textBox2);
             groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(textBox1);
             groupBox1.Controls.Add(Distribucion);
             groupBox1.Controls.Add(tipodeservicio);
             groupBox1.Controls.Add(Retiro);
-            groupBox1.Location = new Point(36, 166);
+            groupBox1.Location = new Point(51, 277);
+            groupBox1.Margin = new Padding(4, 5, 4, 5);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(536, 100);
+            groupBox1.Padding = new Padding(4, 5, 4, 5);
+            groupBox1.Size = new Size(821, 167);
             groupBox1.TabIndex = 20;
             groupBox1.TabStop = false;
             groupBox1.Text = "Filtrar";
             // 
-            // textBox1
+            // button7
             // 
-            textBox1.Location = new Point(194, 36);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 14;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Enabled = false;
-            label1.ImageAlign = ContentAlignment.TopCenter;
-            label1.Location = new Point(194, 18);
-            label1.Name = "label1";
-            label1.Size = new Size(177, 15);
-            label1.TabIndex = 15;
-            label1.Text = "Fecha (o puede ser desde/hasta)";
+            button7.Location = new Point(613, 110);
+            button7.Margin = new Padding(4, 5, 4, 5);
+            button7.Name = "button7";
+            button7.Size = new Size(180, 38);
+            button7.TabIndex = 21;
+            button7.Text = "Buscar";
+            button7.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Enabled = false;
             label2.ImageAlign = ContentAlignment.TopCenter;
-            label2.Location = new Point(380, 19);
+            label2.Location = new Point(613, 32);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(81, 15);
+            label2.Size = new Size(117, 25);
             label2.TabIndex = 17;
             label2.Text = "Cliente (CUIT)";
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(380, 37);
+            textBox2.Location = new Point(613, 69);
+            textBox2.Margin = new Padding(4, 5, 4, 5);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
+            textBox2.Size = new Size(141, 31);
             textBox2.TabIndex = 16;
             // 
-            // button7
+            // label1
             // 
-            button7.Location = new Point(380, 66);
-            button7.Name = "button7";
-            button7.Size = new Size(126, 23);
-            button7.TabIndex = 21;
-            button7.Text = "Buscar";
-            button7.UseVisualStyleBackColor = true;
+            label1.AutoSize = true;
+            label1.Enabled = false;
+            label1.ImageAlign = ContentAlignment.TopCenter;
+            label1.Location = new Point(277, 30);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(169, 25);
+            label1.TabIndex = 15;
+            label1.Text = "Fecha (desde/hasta)";
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(277, 67);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(300, 31);
+            dateTimePicker1.TabIndex = 22;
+            // 
+            // dateTimePicker2
+            // 
+            dateTimePicker2.Location = new Point(277, 104);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.Size = new Size(300, 31);
+            dateTimePicker2.TabIndex = 23;
             // 
             // HDRUltimaMilla
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1074, 760);
+            ClientSize = new Size(1534, 1050);
             Controls.Add(groupBox1);
             Controls.Add(button6);
             Controls.Add(button5);
@@ -324,6 +354,7 @@
             Controls.Add(FleterosDisponibles);
             Controls.Add(HDRUltimaMillaTitulo);
             Controls.Add(tutsasa);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "HDRUltimaMilla";
             Text = "HDR Ultima Milla";
             Load += HDRUltimaMilla_Load;
@@ -363,6 +394,7 @@
         private Label label2;
         private TextBox textBox2;
         private Label label1;
-        private TextBox textBox1;
+        private DateTimePicker dateTimePicker2;
+        private DateTimePicker dateTimePicker1;
     }
 }

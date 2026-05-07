@@ -32,7 +32,6 @@
             textBox1 = new TextBox();
             button1 = new Button();
             listView1 = new ListView();
-            UltimaModificacion = new ColumnHeader();
             UltimaUbicacion = new ColumnHeader();
             Estado = new ColumnHeader();
             Cliente = new ColumnHeader();
@@ -47,26 +46,29 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(31, 69);
+            label1.Location = new Point(44, 115);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(105, 15);
+            label1.Size = new Size(160, 25);
             label1.TabIndex = 0;
             label1.Text = "Ingrese N° de Guía";
             label1.Click += label1_Click;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(228, 69);
+            textBox1.Location = new Point(326, 115);
+            textBox1.Margin = new Padding(4, 5, 4, 5);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(366, 23);
+            textBox1.Size = new Size(521, 31);
             textBox1.TabIndex = 1;
             textBox1.TextChanged += textBox1_TextChanged;
             // 
             // button1
             // 
-            button1.Location = new Point(607, 69);
+            button1.Location = new Point(867, 115);
+            button1.Margin = new Padding(4, 5, 4, 5);
             button1.Name = "button1";
-            button1.Size = new Size(79, 23);
+            button1.Size = new Size(113, 38);
             button1.TabIndex = 2;
             button1.Text = "Buscar";
             button1.UseVisualStyleBackColor = true;
@@ -74,19 +76,15 @@
             // 
             // listView1
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { UltimaModificacion, UltimaUbicacion, Estado, Cliente, Destinatario, FechaCreacion });
-            listView1.Location = new Point(31, 154);
+            listView1.Columns.AddRange(new ColumnHeader[] { UltimaUbicacion, Estado, Cliente, Destinatario, FechaCreacion });
+            listView1.Location = new Point(44, 257);
+            listView1.Margin = new Padding(4, 5, 4, 5);
             listView1.Name = "listView1";
-            listView1.Size = new Size(886, 155);
+            listView1.Size = new Size(1264, 256);
             listView1.TabIndex = 4;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
             listView1.SelectedIndexChanged += listView1_SelectedIndexChanged;
-            // 
-            // UltimaModificacion
-            // 
-            UltimaModificacion.Text = "Última Modificación";
-            UltimaModificacion.Width = 200;
             // 
             // UltimaUbicacion
             // 
@@ -101,6 +99,7 @@
             // Cliente
             // 
             Cliente.Text = "Cliente";
+            Cliente.Width = 90;
             // 
             // Destinatario
             // 
@@ -110,23 +109,25 @@
             // FechaCreacion
             // 
             FechaCreacion.Text = "Fecha Creación";
-            FechaCreacion.Width = 100;
+            FechaCreacion.Width = 200;
             // 
             // lbl_NameTutasa
             // 
             lbl_NameTutasa.Font = new Font("Segoe UI", 16F);
-            lbl_NameTutasa.Location = new Point(21, 7);
+            lbl_NameTutasa.Location = new Point(30, 12);
+            lbl_NameTutasa.Margin = new Padding(4, 0, 4, 0);
             lbl_NameTutasa.Name = "lbl_NameTutasa";
-            lbl_NameTutasa.Size = new Size(150, 35);
+            lbl_NameTutasa.Size = new Size(214, 58);
             lbl_NameTutasa.TabIndex = 11;
             lbl_NameTutasa.Text = "TUTASA S.A";
             // 
             // label3
             // 
             label3.Font = new Font("Segoe UI", 16F);
-            label3.Location = new Point(168, 7);
+            label3.Location = new Point(240, 12);
+            label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(532, 35);
+            label3.Size = new Size(760, 58);
             label3.TabIndex = 12;
             label3.Text = "Consultar estado e historial de una guía (tracking)";
             label3.Click += label3_Click;
@@ -134,9 +135,10 @@
             // label4
             // 
             label4.Font = new Font("Segoe UI", 12F);
-            label4.Location = new Point(31, 121);
+            label4.Location = new Point(44, 202);
+            label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(375, 30);
+            label4.Size = new Size(536, 50);
             label4.TabIndex = 14;
             label4.Text = "Informacion de Movimientos de la Encomienda";
             // 
@@ -144,18 +146,19 @@
             // 
             Btn_Volver.BackColor = Color.DarkRed;
             Btn_Volver.ForeColor = SystemColors.ButtonHighlight;
-            Btn_Volver.Location = new Point(809, 402);
+            Btn_Volver.Location = new Point(1156, 670);
+            Btn_Volver.Margin = new Padding(4, 5, 4, 5);
             Btn_Volver.Name = "Btn_Volver";
-            Btn_Volver.Size = new Size(108, 37);
+            Btn_Volver.Size = new Size(154, 62);
             Btn_Volver.TabIndex = 62;
             Btn_Volver.Text = "Cancelar/Volver";
             Btn_Volver.UseVisualStyleBackColor = false;
             // 
             // Tracking
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(928, 450);
+            ClientSize = new Size(1326, 750);
             Controls.Add(Btn_Volver);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -164,6 +167,7 @@
             Controls.Add(button1);
             Controls.Add(textBox1);
             Controls.Add(label1);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "Tracking";
             Text = "Tracking";
             Load += Tracking_Load;
@@ -178,7 +182,6 @@
         private TextBox textBox1;
         private Button button1;
         private ListView listView1;
-        private ColumnHeader UltimaModificacion;
         private ColumnHeader UltimaUbicacion;
         private ColumnHeader Estado;
         public Label lbl_NameTutasa;
