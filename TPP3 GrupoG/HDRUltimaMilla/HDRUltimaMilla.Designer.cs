@@ -32,16 +32,21 @@
             HDRUltimaMillaTitulo = new Label();
             FleterosDisponibles = new ComboBox();
             Fletero = new Label();
-            Zona = new Label();
+            CentroDistribucion = new Label();
             ZonasDisponibles = new ComboBox();
             EstadoGuias = new ListView();
             NdeGuía = new ColumnHeader();
-            Estado = new ColumnHeader();
             Observaciones = new ColumnHeader();
             detalleHDR = new Label();
-            button1 = new Button();
             button2 = new Button();
             button3 = new Button();
+            tipodeservicio = new Label();
+            Retiro = new CheckBox();
+            Distribucion = new CheckBox();
+            TiempoSinAsignar = new ColumnHeader();
+            Dirección = new ColumnHeader();
+            Tipopaquete = new ColumnHeader();
+            GenerarHDR = new Button();
             SuspendLayout();
             // 
             // tutsasa
@@ -67,7 +72,7 @@
             // FleterosDisponibles
             // 
             FleterosDisponibles.FormattingEnabled = true;
-            FleterosDisponibles.Location = new Point(22, 105);
+            FleterosDisponibles.Location = new Point(22, 123);
             FleterosDisponibles.Name = "FleterosDisponibles";
             FleterosDisponibles.Size = new Size(314, 23);
             FleterosDisponibles.TabIndex = 2;
@@ -75,35 +80,35 @@
             // Fletero
             // 
             Fletero.AutoSize = true;
-            Fletero.Location = new Point(22, 87);
+            Fletero.Location = new Point(22, 105);
             Fletero.Name = "Fletero";
             Fletero.Size = new Size(48, 15);
             Fletero.TabIndex = 3;
             Fletero.Text = "Fleteros";
             // 
-            // Zona
+            // CentroDistribucion
             // 
-            Zona.AutoSize = true;
-            Zona.Location = new Point(374, 87);
-            Zona.Name = "Zona";
-            Zona.Size = new Size(34, 15);
-            Zona.TabIndex = 4;
-            Zona.Text = "Zona";
+            CentroDistribucion.AutoSize = true;
+            CentroDistribucion.Location = new Point(22, 61);
+            CentroDistribucion.Name = "CentroDistribucion";
+            CentroDistribucion.Size = new Size(126, 15);
+            CentroDistribucion.TabIndex = 4;
+            CentroDistribucion.Text = "Centro de Distribución";
             // 
             // ZonasDisponibles
             // 
             ZonasDisponibles.FormattingEnabled = true;
-            ZonasDisponibles.Location = new Point(374, 105);
+            ZonasDisponibles.Location = new Point(22, 79);
             ZonasDisponibles.Name = "ZonasDisponibles";
-            ZonasDisponibles.Size = new Size(290, 23);
+            ZonasDisponibles.Size = new Size(314, 23);
             ZonasDisponibles.TabIndex = 5;
             // 
             // EstadoGuias
             // 
-            EstadoGuias.Columns.AddRange(new ColumnHeader[] { NdeGuía, Estado, Observaciones });
+            EstadoGuias.Columns.AddRange(new ColumnHeader[] { NdeGuía, TiempoSinAsignar, Observaciones, Dirección, Tipopaquete });
             EstadoGuias.Location = new Point(22, 221);
             EstadoGuias.Name = "EstadoGuias";
-            EstadoGuias.Size = new Size(642, 227);
+            EstadoGuias.Size = new Size(784, 227);
             EstadoGuias.TabIndex = 6;
             EstadoGuias.UseCompatibleStateImageBehavior = false;
             EstadoGuias.View = View.Details;
@@ -114,17 +119,12 @@
             NdeGuía.Text = "N °de Guía";
             NdeGuía.Width = 120;
             // 
-            // Estado
-            // 
-            Estado.Text = "Estado";
-            Estado.TextAlign = HorizontalAlignment.Center;
-            Estado.Width = 120;
-            // 
             // Observaciones
             // 
+            Observaciones.DisplayIndex = 1;
             Observaciones.Text = "Observaciones";
             Observaciones.TextAlign = HorizontalAlignment.Center;
-            Observaciones.Width = 300;
+            Observaciones.Width = 200;
             // 
             // detalleHDR
             // 
@@ -135,18 +135,9 @@
             detalleHDR.TabIndex = 7;
             detalleHDR.Text = "Detalle HDR";
             // 
-            // button1
-            // 
-            button1.Location = new Point(22, 454);
-            button1.Name = "button1";
-            button1.Size = new Size(130, 23);
-            button1.TabIndex = 8;
-            button1.Text = "Ingresar nueva Guía";
-            button1.UseVisualStyleBackColor = true;
-            // 
             // button2
             // 
-            button2.Location = new Point(442, 454);
+            button2.Location = new Point(556, 454);
             button2.Name = "button2";
             button2.Size = new Size(140, 23);
             button2.TabIndex = 9;
@@ -155,25 +146,85 @@
             // 
             // button3
             // 
-            button3.Location = new Point(589, 454);
+            button3.Location = new Point(702, 454);
             button3.Name = "button3";
-            button3.Size = new Size(75, 23);
+            button3.Size = new Size(104, 23);
             button3.TabIndex = 10;
-            button3.Text = "Imprimir";
+            button3.Text = "Imprimir HDR";
             button3.UseVisualStyleBackColor = true;
+            // 
+            // tipodeservicio
+            // 
+            tipodeservicio.AutoSize = true;
+            tipodeservicio.Enabled = false;
+            tipodeservicio.ImageAlign = ContentAlignment.TopCenter;
+            tipodeservicio.Location = new Point(22, 149);
+            tipodeservicio.Name = "tipodeservicio";
+            tipodeservicio.Size = new Size(91, 15);
+            tipodeservicio.TabIndex = 11;
+            tipodeservicio.Text = "Tipo de Servicio";
+            // 
+            // Retiro
+            // 
+            Retiro.AutoSize = true;
+            Retiro.Location = new Point(22, 167);
+            Retiro.Name = "Retiro";
+            Retiro.Size = new Size(57, 19);
+            Retiro.TabIndex = 12;
+            Retiro.Text = "Retiro";
+            Retiro.UseVisualStyleBackColor = true;
+            // 
+            // Distribucion
+            // 
+            Distribucion.AutoSize = true;
+            Distribucion.Location = new Point(85, 167);
+            Distribucion.Name = "Distribucion";
+            Distribucion.Size = new Size(90, 19);
+            Distribucion.TabIndex = 13;
+            Distribucion.Text = "Distribución";
+            Distribucion.UseVisualStyleBackColor = true;
+            // 
+            // TiempoSinAsignar
+            // 
+            TiempoSinAsignar.DisplayIndex = 2;
+            TiempoSinAsignar.Text = "Tiempo Sin Asignación";
+            TiempoSinAsignar.Width = 150;
+            // 
+            // Dirección
+            // 
+            Dirección.Text = "Dirección";
+            Dirección.Width = 100;
+            // 
+            // Tipopaquete
+            // 
+            Tipopaquete.Text = "Tipo de Paquete";
+            Tipopaquete.Width = 100;
+            // 
+            // GenerarHDR
+            // 
+            GenerarHDR.Location = new Point(22, 454);
+            GenerarHDR.Name = "GenerarHDR";
+            GenerarHDR.Size = new Size(126, 23);
+            GenerarHDR.TabIndex = 14;
+            GenerarHDR.Text = "Generar HDR";
+            GenerarHDR.UseVisualStyleBackColor = true;
+            GenerarHDR.Click += button1_Click;
             // 
             // HDRUltimaMilla
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(872, 507);
+            Controls.Add(GenerarHDR);
+            Controls.Add(Distribucion);
+            Controls.Add(Retiro);
+            Controls.Add(tipodeservicio);
             Controls.Add(button3);
             Controls.Add(button2);
-            Controls.Add(button1);
             Controls.Add(detalleHDR);
             Controls.Add(EstadoGuias);
             Controls.Add(ZonasDisponibles);
-            Controls.Add(Zona);
+            Controls.Add(CentroDistribucion);
             Controls.Add(Fletero);
             Controls.Add(FleterosDisponibles);
             Controls.Add(HDRUltimaMillaTitulo);
@@ -190,15 +241,20 @@
         private Label HDRUltimaMillaTitulo;
         private ComboBox FleterosDisponibles;
         private Label Fletero;
-        private Label Zona;
+        private Label CentroDistribucion;
         private ComboBox ZonasDisponibles;
         private ListView EstadoGuias;
         private ColumnHeader NdeGuía;
-        private ColumnHeader Estado;
         private ColumnHeader Observaciones;
         private Label detalleHDR;
-        private Button button1;
         private Button button2;
         private Button button3;
+        private Label tipodeservicio;
+        private CheckBox Retiro;
+        private CheckBox Distribucion;
+        private ColumnHeader TiempoSinAsignar;
+        private ColumnHeader Dirección;
+        private ColumnHeader Tipopaquete;
+        private Button GenerarHDR;
     }
 }

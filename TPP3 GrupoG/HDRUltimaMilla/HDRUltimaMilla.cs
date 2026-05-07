@@ -19,5 +19,10 @@ namespace TPP3_GrupoG.HDRUltimaMilla
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

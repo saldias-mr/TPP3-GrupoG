@@ -39,5 +39,25 @@ namespace TPP3_GrupoG.ImposicionCallCenter
         {
 
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_Descripcion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_TipoEntrega_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

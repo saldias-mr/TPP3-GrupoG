@@ -32,32 +32,31 @@
             textBox1 = new TextBox();
             button1 = new Button();
             listView1 = new ListView();
-            Fecha = new ColumnHeader();
-            Hora = new ColumnHeader();
-            Punto_Operativo = new ColumnHeader();
+            UltimaModificacion = new ColumnHeader();
+            UltimaUbicacion = new ColumnHeader();
             Estado = new ColumnHeader();
+            Cliente = new ColumnHeader();
+            Destinatario = new ColumnHeader();
             lbl_NameTutasa = new Label();
             label3 = new Label();
-            label2 = new Label();
             label4 = new Label();
             Btn_Volver = new Button();
+            FechaCreacion = new ColumnHeader();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Location = new Point(31, 69);
-            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(151, 15);
+            label1.Size = new Size(105, 15);
             label1.TabIndex = 0;
-            label1.Text = "Ingrese N° de Identificador ";
+            label1.Text = "Ingrese N° de Guía";
             label1.Click += label1_Click;
             // 
             // textBox1
             // 
             textBox1.Location = new Point(228, 69);
-            textBox1.Margin = new Padding(2);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(366, 23);
             textBox1.TabIndex = 1;
@@ -66,7 +65,6 @@
             // button1
             // 
             button1.Location = new Point(607, 69);
-            button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(79, 23);
             button1.TabIndex = 2;
@@ -76,35 +74,38 @@
             // 
             // listView1
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { Fecha, Hora, Punto_Operativo, Estado });
+            listView1.Columns.AddRange(new ColumnHeader[] { UltimaModificacion, UltimaUbicacion, Estado, Cliente, Destinatario, FechaCreacion });
             listView1.Location = new Point(31, 154);
-            listView1.Margin = new Padding(2);
             listView1.Name = "listView1";
-            listView1.Size = new Size(656, 155);
+            listView1.Size = new Size(886, 155);
             listView1.TabIndex = 4;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
             listView1.SelectedIndexChanged += listView1_SelectedIndexChanged;
             // 
-            // Fecha
+            // UltimaModificacion
             // 
-            Fecha.Text = "Fecha";
-            Fecha.Width = 150;
+            UltimaModificacion.Text = "Última Modificación";
+            UltimaModificacion.Width = 200;
             // 
-            // Hora
+            // UltimaUbicacion
             // 
-            Hora.Text = "Hora";
-            Hora.Width = 100;
-            // 
-            // Punto_Operativo
-            // 
-            Punto_Operativo.Text = "Punto_Operativo";
-            Punto_Operativo.Width = 200;
+            UltimaUbicacion.Text = "Última Ubicación";
+            UltimaUbicacion.Width = 200;
             // 
             // Estado
             // 
             Estado.Text = "Estado";
-            Estado.Width = 200;
+            Estado.Width = 100;
+            // 
+            // Cliente
+            // 
+            Cliente.Text = "Cliente";
+            // 
+            // Destinatario
+            // 
+            Destinatario.Text = "Destinatario";
+            Destinatario.Width = 200;
             // 
             // lbl_NameTutasa
             // 
@@ -125,15 +126,6 @@
             label3.Text = "Consultar estado e historial de una guía (tracking)";
             label3.Click += label3_Click;
             // 
-            // label2
-            // 
-            label2.Location = new Point(31, 337);
-            label2.Margin = new Padding(2, 0, 2, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(283, 20);
-            label2.TabIndex = 13;
-            label2.Text = "Ingrese el Codigo que figura en la Encomienda";
-            // 
             // label4
             // 
             label4.Font = new Font("Segoe UI", 12F);
@@ -147,34 +139,37 @@
             // 
             Btn_Volver.BackColor = Color.DarkRed;
             Btn_Volver.ForeColor = SystemColors.ButtonHighlight;
-            Btn_Volver.Location = new Point(578, 320);
-            Btn_Volver.Margin = new Padding(3, 2, 3, 2);
+            Btn_Volver.Location = new Point(809, 402);
             Btn_Volver.Name = "Btn_Volver";
             Btn_Volver.Size = new Size(108, 37);
             Btn_Volver.TabIndex = 62;
             Btn_Volver.Text = "Cancelar/Volver";
             Btn_Volver.UseVisualStyleBackColor = false;
             // 
+            // FechaCreacion
+            // 
+            FechaCreacion.Text = "Fecha Creación";
+            FechaCreacion.Width = 100;
+            // 
             // Tracking
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(710, 365);
+            ClientSize = new Size(928, 450);
             Controls.Add(Btn_Volver);
             Controls.Add(label4);
-            Controls.Add(label2);
             Controls.Add(label3);
             Controls.Add(lbl_NameTutasa);
             Controls.Add(listView1);
             Controls.Add(button1);
             Controls.Add(textBox1);
             Controls.Add(label1);
-            Margin = new Padding(2);
             Name = "Tracking";
             Text = "Tracking";
             ResumeLayout(false);
             PerformLayout();
         }
+
 
         #endregion
 
@@ -182,14 +177,15 @@
         private TextBox textBox1;
         private Button button1;
         private ListView listView1;
-        private ColumnHeader Fecha;
-        private ColumnHeader Hora;
-        private ColumnHeader Punto_Operativo;
+        private ColumnHeader UltimaModificacion;
+        private ColumnHeader UltimaUbicacion;
         private ColumnHeader Estado;
         public Label lbl_NameTutasa;
         private Label label3;
-        private Label label2;
         public Label label4;
         private Button Btn_Volver;
+        private ColumnHeader Cliente;
+        private ColumnHeader Destinatario;
+        private ColumnHeader FechaCreacion;
     }
 }

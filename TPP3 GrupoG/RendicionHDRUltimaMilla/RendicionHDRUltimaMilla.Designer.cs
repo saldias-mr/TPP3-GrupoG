@@ -59,7 +59,7 @@
             // buscarFletero
             // 
             buscarFletero.Location = new Point(218, 14);
-            buscarFletero.Margin = new Padding(2, 2, 2, 2);
+            buscarFletero.Margin = new Padding(2);
             buscarFletero.Name = "buscarFletero";
             buscarFletero.Size = new Size(78, 24);
             buscarFletero.TabIndex = 1;
@@ -69,7 +69,7 @@
             // dniFleteroTXT
             // 
             dniFleteroTXT.Location = new Point(97, 15);
-            dniFleteroTXT.Margin = new Padding(2, 2, 2, 2);
+            dniFleteroTXT.Margin = new Padding(2);
             dniFleteroTXT.Name = "dniFleteroTXT";
             dniFleteroTXT.Size = new Size(106, 23);
             dniFleteroTXT.TabIndex = 2;
@@ -100,7 +100,7 @@
             hdrPendienteLIST.Columns.AddRange(new ColumnHeader[] { numHDR, tipoHDR, domicilioVisitar });
             hdrPendienteLIST.FullRowSelect = true;
             hdrPendienteLIST.Location = new Point(22, 76);
-            hdrPendienteLIST.Margin = new Padding(2, 2, 2, 2);
+            hdrPendienteLIST.Margin = new Padding(2);
             hdrPendienteLIST.MultiSelect = false;
             hdrPendienteLIST.Name = "hdrPendienteLIST";
             hdrPendienteLIST.Size = new Size(303, 155);
@@ -120,14 +120,14 @@
             // 
             // domicilioVisitar
             // 
-            domicilioVisitar.Text = "Domicilio";
+            domicilioVisitar.Text = "Dirección";
             domicilioVisitar.Width = 90;
             // 
             // guiaAsociadaLIST
             // 
             guiaAsociadaLIST.FullRowSelect = true;
             guiaAsociadaLIST.Location = new Point(453, 76);
-            guiaAsociadaLIST.Margin = new Padding(2, 2, 2, 2);
+            guiaAsociadaLIST.Margin = new Padding(2);
             guiaAsociadaLIST.MultiSelect = false;
             guiaAsociadaLIST.Name = "guiaAsociadaLIST";
             guiaAsociadaLIST.Size = new Size(122, 155);
@@ -150,7 +150,7 @@
             resultadoCMB.FormattingEnabled = true;
             resultadoCMB.Items.AddRange(new object[] { "Entregada", "Retirada", "No entregada", "No retirada", "Incidencia" });
             resultadoCMB.Location = new Point(86, 235);
-            resultadoCMB.Margin = new Padding(2, 2, 2, 2);
+            resultadoCMB.Margin = new Padding(2);
             resultadoCMB.Name = "resultadoCMB";
             resultadoCMB.Size = new Size(129, 23);
             resultadoCMB.TabIndex = 8;
@@ -168,7 +168,7 @@
             // motivoIncidenciaTXT
             // 
             motivoIncidenciaTXT.Location = new Point(86, 263);
-            motivoIncidenciaTXT.Margin = new Padding(2, 2, 2, 2);
+            motivoIncidenciaTXT.Margin = new Padding(2);
             motivoIncidenciaTXT.Name = "motivoIncidenciaTXT";
             motivoIncidenciaTXT.Size = new Size(129, 23);
             motivoIncidenciaTXT.TabIndex = 10;
@@ -176,7 +176,7 @@
             // confirmarRendicion
             // 
             confirmarRendicion.Location = new Point(432, 278);
-            confirmarRendicion.Margin = new Padding(2, 2, 2, 2);
+            confirmarRendicion.Margin = new Padding(2);
             confirmarRendicion.Name = "confirmarRendicion";
             confirmarRendicion.Size = new Size(78, 31);
             confirmarRendicion.TabIndex = 11;
@@ -186,7 +186,7 @@
             // emitirResumen
             // 
             emitirResumen.Location = new Point(514, 278);
-            emitirResumen.Margin = new Padding(2, 2, 2, 2);
+            emitirResumen.Margin = new Padding(2);
             emitirResumen.Name = "emitirResumen";
             emitirResumen.Size = new Size(98, 31);
             emitirResumen.TabIndex = 12;
@@ -211,7 +211,7 @@
             Controls.Add(dniFleteroTXT);
             Controls.Add(buscarFletero);
             Controls.Add(dniFletero);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "Rendicion_de_HDR_Ultima_Milla";
             Text = "Rendición de HDR Última Milla";
             ResumeLayout(false);
