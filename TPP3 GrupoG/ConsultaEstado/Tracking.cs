@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
-
-namespace TPP3_GrupoG.ConsultaEstado
+﻿namespace TPP3_GrupoG.ConsultaEstado
 {
     public partial class Tracking : Form
     {
@@ -38,6 +30,11 @@ namespace TPP3_GrupoG.ConsultaEstado
         private void label3_Click(object sender, EventArgs e)
         {
             // Lógica opcional para el click en label3
+        }
+
+        private void Tracking_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

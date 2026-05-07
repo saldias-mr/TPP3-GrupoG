@@ -37,11 +37,11 @@
             Estado = new ColumnHeader();
             Cliente = new ColumnHeader();
             Destinatario = new ColumnHeader();
+            FechaCreacion = new ColumnHeader();
             lbl_NameTutasa = new Label();
             label3 = new Label();
             label4 = new Label();
             Btn_Volver = new Button();
-            FechaCreacion = new ColumnHeader();
             SuspendLayout();
             // 
             // label1
@@ -107,6 +107,11 @@
             Destinatario.Text = "Destinatario";
             Destinatario.Width = 200;
             // 
+            // FechaCreacion
+            // 
+            FechaCreacion.Text = "Fecha Creación";
+            FechaCreacion.Width = 100;
+            // 
             // lbl_NameTutasa
             // 
             lbl_NameTutasa.Font = new Font("Segoe UI", 16F);
@@ -129,7 +134,7 @@
             // label4
             // 
             label4.Font = new Font("Segoe UI", 12F);
-            label4.Location = new Point(31, 115);
+            label4.Location = new Point(31, 121);
             label4.Name = "label4";
             label4.Size = new Size(375, 30);
             label4.TabIndex = 14;
@@ -146,11 +151,6 @@
             Btn_Volver.Text = "Cancelar/Volver";
             Btn_Volver.UseVisualStyleBackColor = false;
             // 
-            // FechaCreacion
-            // 
-            FechaCreacion.Text = "Fecha Creación";
-            FechaCreacion.Width = 100;
-            // 
             // Tracking
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -166,6 +166,7 @@
             Controls.Add(label1);
             Name = "Tracking";
             Text = "Tracking";
+            Load += Tracking_Load;
             ResumeLayout(false);
             PerformLayout();
         }

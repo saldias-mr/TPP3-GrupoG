@@ -40,10 +40,14 @@
             guiaAsociadaLIST = new ListView();
             resultado = new Label();
             resultadoCMB = new ComboBox();
-            motivoIncidencia = new Label();
-            motivoIncidenciaTXT = new TextBox();
             confirmarRendicion = new Button();
             emitirResumen = new Button();
+            listView1 = new ListView();
+            listView2 = new ListView();
+            columnHeader1 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
+            columnHeader3 = new ColumnHeader();
+            label1 = new Label();
             SuspendLayout();
             // 
             // dniFletero
@@ -77,17 +81,17 @@
             // hdrPendiente
             // 
             hdrPendiente.AutoSize = true;
-            hdrPendiente.Location = new Point(22, 57);
+            hdrPendiente.Location = new Point(31, 268);
             hdrPendiente.Margin = new Padding(2, 0, 2, 0);
             hdrPendiente.Name = "hdrPendiente";
-            hdrPendiente.Size = new Size(77, 15);
+            hdrPendiente.Size = new Size(120, 15);
             hdrPendiente.TabIndex = 3;
-            hdrPendiente.Text = "Hojas de ruta";
+            hdrPendiente.Text = "Hojas de ruta a rendir";
             // 
             // guiaAsociada
             // 
             guiaAsociada.AutoSize = true;
-            guiaAsociada.Location = new Point(453, 57);
+            guiaAsociada.Location = new Point(462, 268);
             guiaAsociada.Margin = new Padding(2, 0, 2, 0);
             guiaAsociada.Name = "guiaAsociada";
             guiaAsociada.Size = new Size(36, 15);
@@ -99,11 +103,11 @@
             // 
             hdrPendienteLIST.Columns.AddRange(new ColumnHeader[] { numHDR, tipoHDR, domicilioVisitar });
             hdrPendienteLIST.FullRowSelect = true;
-            hdrPendienteLIST.Location = new Point(22, 76);
+            hdrPendienteLIST.Location = new Point(31, 287);
             hdrPendienteLIST.Margin = new Padding(2);
             hdrPendienteLIST.MultiSelect = false;
             hdrPendienteLIST.Name = "hdrPendienteLIST";
-            hdrPendienteLIST.Size = new Size(303, 155);
+            hdrPendienteLIST.Size = new Size(427, 155);
             hdrPendienteLIST.TabIndex = 5;
             hdrPendienteLIST.UseCompatibleStateImageBehavior = false;
             hdrPendienteLIST.View = View.Details;
@@ -126,11 +130,11 @@
             // guiaAsociadaLIST
             // 
             guiaAsociadaLIST.FullRowSelect = true;
-            guiaAsociadaLIST.Location = new Point(453, 76);
+            guiaAsociadaLIST.Location = new Point(462, 287);
             guiaAsociadaLIST.Margin = new Padding(2);
             guiaAsociadaLIST.MultiSelect = false;
             guiaAsociadaLIST.Name = "guiaAsociadaLIST";
-            guiaAsociadaLIST.Size = new Size(122, 155);
+            guiaAsociadaLIST.Size = new Size(340, 155);
             guiaAsociadaLIST.TabIndex = 6;
             guiaAsociadaLIST.UseCompatibleStateImageBehavior = false;
             guiaAsociadaLIST.View = View.Details;
@@ -138,7 +142,7 @@
             // resultado
             // 
             resultado.AutoSize = true;
-            resultado.Location = new Point(22, 240);
+            resultado.Location = new Point(31, 456);
             resultado.Margin = new Padding(2, 0, 2, 0);
             resultado.Name = "resultado";
             resultado.Size = new Size(62, 15);
@@ -149,33 +153,15 @@
             // 
             resultadoCMB.FormattingEnabled = true;
             resultadoCMB.Items.AddRange(new object[] { "Entregada", "Retirada", "No entregada", "No retirada", "Incidencia" });
-            resultadoCMB.Location = new Point(86, 235);
+            resultadoCMB.Location = new Point(106, 448);
             resultadoCMB.Margin = new Padding(2);
             resultadoCMB.Name = "resultadoCMB";
             resultadoCMB.Size = new Size(129, 23);
             resultadoCMB.TabIndex = 8;
             // 
-            // motivoIncidencia
-            // 
-            motivoIncidencia.AutoSize = true;
-            motivoIncidencia.Location = new Point(22, 271);
-            motivoIncidencia.Margin = new Padding(2, 0, 2, 0);
-            motivoIncidencia.Name = "motivoIncidencia";
-            motivoIncidencia.Size = new Size(48, 15);
-            motivoIncidencia.TabIndex = 9;
-            motivoIncidencia.Text = "Motivo:";
-            // 
-            // motivoIncidenciaTXT
-            // 
-            motivoIncidenciaTXT.Location = new Point(86, 263);
-            motivoIncidenciaTXT.Margin = new Padding(2);
-            motivoIncidenciaTXT.Name = "motivoIncidenciaTXT";
-            motivoIncidenciaTXT.Size = new Size(129, 23);
-            motivoIncidenciaTXT.TabIndex = 10;
-            // 
             // confirmarRendicion
             // 
-            confirmarRendicion.Location = new Point(432, 278);
+            confirmarRendicion.Location = new Point(239, 446);
             confirmarRendicion.Margin = new Padding(2);
             confirmarRendicion.Name = "confirmarRendicion";
             confirmarRendicion.Size = new Size(78, 31);
@@ -185,7 +171,7 @@
             // 
             // emitirResumen
             // 
-            emitirResumen.Location = new Point(514, 278);
+            emitirResumen.Location = new Point(704, 508);
             emitirResumen.Margin = new Padding(2);
             emitirResumen.Name = "emitirResumen";
             emitirResumen.Size = new Size(98, 31);
@@ -193,15 +179,66 @@
             emitirResumen.Text = "Emitir resumen";
             emitirResumen.UseVisualStyleBackColor = true;
             // 
+            // listView1
+            // 
+            listView1.FullRowSelect = true;
+            listView1.Location = new Point(453, 69);
+            listView1.Margin = new Padding(2);
+            listView1.MultiSelect = false;
+            listView1.Name = "listView1";
+            listView1.Size = new Size(340, 155);
+            listView1.TabIndex = 15;
+            listView1.UseCompatibleStateImageBehavior = false;
+            listView1.View = View.Details;
+            // 
+            // listView2
+            // 
+            listView2.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3 });
+            listView2.FullRowSelect = true;
+            listView2.Location = new Point(22, 69);
+            listView2.Margin = new Padding(2);
+            listView2.MultiSelect = false;
+            listView2.Name = "listView2";
+            listView2.Size = new Size(427, 155);
+            listView2.TabIndex = 14;
+            listView2.UseCompatibleStateImageBehavior = false;
+            listView2.View = View.Details;
+            // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "Nº HDR";
+            columnHeader1.Width = 90;
+            // 
+            // columnHeader2
+            // 
+            columnHeader2.Text = "Tipo";
+            columnHeader2.Width = 90;
+            // 
+            // columnHeader3
+            // 
+            columnHeader3.Text = "Dirección";
+            columnHeader3.Width = 90;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(22, 50);
+            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(182, 15);
+            label1.TabIndex = 13;
+            label1.Text = "Hojas de ruta a entregar al fletero";
+            // 
             // Rendicion_de_HDR_Ultima_Milla
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(623, 317);
+            ClientSize = new Size(822, 558);
+            Controls.Add(listView1);
+            Controls.Add(listView2);
+            Controls.Add(label1);
             Controls.Add(emitirResumen);
             Controls.Add(confirmarRendicion);
-            Controls.Add(motivoIncidenciaTXT);
-            Controls.Add(motivoIncidencia);
             Controls.Add(resultadoCMB);
             Controls.Add(resultado);
             Controls.Add(guiaAsociadaLIST);
@@ -232,9 +269,13 @@
         private ColumnHeader domicilioVisitar;
         private Label resultado;
         private ComboBox resultadoCMB;
-        private Label motivoIncidencia;
-        private TextBox motivoIncidenciaTXT;
         private Button confirmarRendicion;
         private Button emitirResumen;
+        private ListView listView1;
+        private ListView listView2;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
+        private ColumnHeader columnHeader3;
+        private Label label1;
     }
 }

@@ -28,17 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
             label1 = new Label();
             lbl_NameTutasa = new Label();
             label3 = new Label();
             lbl_DatosCliente = new Label();
             label7 = new Label();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
             lbl_Direccion = new Label();
             lbl_Telefono = new Label();
-            textBox4 = new TextBox();
             lbl_DatosDestinatario = new Label();
             lbl_NombreDestinatario = new Label();
             textBox5 = new TextBox();
@@ -62,7 +58,6 @@
             Btn_Volver = new Button();
             comboBox1 = new ComboBox();
             TipoPaquete = new Label();
-            textBox9 = new TextBox();
             CodidoPostal = new Label();
             textBox10 = new TextBox();
             CodigoPostalDestinatario = new Label();
@@ -71,16 +66,10 @@
             provincialocalidadLBL = new Label();
             comboBox3 = new ComboBox();
             pronviciaCliente = new Label();
-            CPCliente = new TextBox();
+            label5 = new Label();
+            label6 = new Label();
+            radioButton1 = new RadioButton();
             SuspendLayout();
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(29, 226);
-            textBox1.Margin = new Padding(2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(232, 23);
-            textBox1.TabIndex = 0;
             // 
             // label1
             // 
@@ -133,22 +122,6 @@
             label7.TabIndex = 23;
             label7.Text = "DNI / CUIT";
             // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(29, 339);
-            textBox2.Margin = new Padding(2);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(232, 23);
-            textBox2.TabIndex = 24;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(29, 385);
-            textBox3.Margin = new Padding(2);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(232, 23);
-            textBox3.TabIndex = 25;
-            // 
             // lbl_Direccion
             // 
             lbl_Direccion.AutoSize = true;
@@ -168,14 +141,6 @@
             lbl_Telefono.Size = new Size(53, 15);
             lbl_Telefono.TabIndex = 27;
             lbl_Telefono.Text = "Telefono";
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(29, 430);
-            textBox4.Margin = new Padding(2);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(232, 23);
-            textBox4.TabIndex = 28;
             // 
             // lbl_DatosDestinatario
             // 
@@ -407,13 +372,6 @@
             TipoPaquete.Text = "Tipo de Paquete";
             TipoPaquete.Click += label5_Click;
             // 
-            // textBox9
-            // 
-            textBox9.Location = new Point(29, 481);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(232, 23);
-            textBox9.TabIndex = 64;
-            // 
             // CodidoPostal
             // 
             CodidoPostal.AutoSize = true;
@@ -450,7 +408,7 @@
             // AgenciaCB
             // 
             AgenciaCB.FormattingEnabled = true;
-            AgenciaCB.Location = new Point(652, 398);
+            AgenciaCB.Location = new Point(652, 431);
             AgenciaCB.Name = "AgenciaCB";
             AgenciaCB.Size = new Size(226, 23);
             AgenciaCB.TabIndex = 69;
@@ -482,19 +440,46 @@
             pronviciaCliente.Text = "Provincia/Localidad";
             pronviciaCliente.Click += label5_Click_1;
             // 
-            // CPCliente
+            // label5
             // 
-            CPCliente.Location = new Point(29, 288);
-            CPCliente.Name = "CPCliente";
-            CPCliente.Size = new Size(232, 23);
-            CPCliente.TabIndex = 75;
+            label5.AutoSize = true;
+            label5.Location = new Point(29, 225);
+            label5.Margin = new Padding(2, 0, 2, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(135, 15);
+            label5.TabIndex = 75;
+            label5.Text = "[Nombre de la empresa]";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(29, 296);
+            label6.Margin = new Padding(2, 0, 2, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(75, 15);
+            label6.TabIndex = 76;
+            label6.Text = "Buenos Aires";
+            // 
+            // radioButton1
+            // 
+            radioButton1.AutoSize = true;
+            radioButton1.Location = new Point(652, 398);
+            radioButton1.Margin = new Padding(3, 2, 3, 2);
+            radioButton1.Name = "radioButton1";
+            radioButton1.Size = new Size(118, 19);
+            radioButton1.TabIndex = 77;
+            radioButton1.TabStop = true;
+            radioButton1.Text = "Entrega domicilio";
+            radioButton1.UseVisualStyleBackColor = true;
             // 
             // ImposicionCallCenter
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(936, 538);
-            Controls.Add(CPCliente);
+            Controls.Add(radioButton1);
+            Controls.Add(label6);
+            Controls.Add(label5);
             Controls.Add(pronviciaCliente);
             Controls.Add(comboBox3);
             Controls.Add(provincialocalidadLBL);
@@ -503,7 +488,6 @@
             Controls.Add(CodigoPostalDestinatario);
             Controls.Add(textBox10);
             Controls.Add(CodidoPostal);
-            Controls.Add(textBox9);
             Controls.Add(TipoPaquete);
             Controls.Add(comboBox1);
             Controls.Add(Btn_Volver);
@@ -527,17 +511,13 @@
             Controls.Add(textBox5);
             Controls.Add(lbl_NombreDestinatario);
             Controls.Add(lbl_DatosDestinatario);
-            Controls.Add(textBox4);
             Controls.Add(lbl_Telefono);
             Controls.Add(lbl_Direccion);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
             Controls.Add(label7);
             Controls.Add(lbl_DatosCliente);
             Controls.Add(label3);
             Controls.Add(lbl_NameTutasa);
             Controls.Add(label1);
-            Controls.Add(textBox1);
             Margin = new Padding(2);
             Name = "ImposicionCallCenter";
             Text = "ImposicionCallCenter";
@@ -547,18 +527,13 @@
         }
 
         #endregion
-
-        private TextBox textBox1;
         private Label label1;
         public Label lbl_NameTutasa;
         private Label label3;
         private Label lbl_DatosCliente;
         private Label label7;
-        private TextBox textBox2;
-        private TextBox textBox3;
         private Label lbl_Direccion;
         private Label lbl_Telefono;
-        private TextBox textBox4;
         private Label lbl_DatosDestinatario;
         private Label lbl_NombreDestinatario;
         private TextBox textBox5;
@@ -582,7 +557,6 @@
         private Button Btn_Volver;
         private ComboBox comboBox1;
         private Label TipoPaquete;
-        private TextBox textBox9;
         private Label CodidoPostal;
         private TextBox textBox10;
         private Label CodigoPostalDestinatario;
@@ -593,6 +567,8 @@
         private Label provincialocalidadLBL;
         private ComboBox comboBox3;
         private Label pronviciaCliente;
-        private TextBox CPCliente;
+        private Label label5;
+        private Label label6;
+        private RadioButton radioButton1;
     }
 }
