@@ -529,7 +529,6 @@
             label3.Size = new Size(507, 33);
             label3.TabIndex = 88;
             label3.Text = "-Imposicion de Encomienda por Agencia";
-            label3.Click += this.label3_Click;
             // 
             // lbl_NameTutasa
             // 
@@ -554,7 +553,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1008, 591);
+            ClientSize = new Size(1008, 649);
             Controls.Add(label13);
             Controls.Add(label12);
             Controls.Add(label11);
