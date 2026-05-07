@@ -609,6 +609,11 @@
             PerformLayout();
         }
 
+        private void label3_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
 
         private Label label13;
