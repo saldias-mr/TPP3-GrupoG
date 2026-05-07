@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace TPP3_GrupoG.Entregas
 {
-    public partial class Entregas : Form
+    public partial class EntregaCD : Form
     {
-        public Entregas()
+        public EntregaCD()
         {
             InitializeComponent();
         }
@@ -46,6 +46,11 @@ namespace TPP3_GrupoG.Entregas
         }
 
         private void Entregas_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }

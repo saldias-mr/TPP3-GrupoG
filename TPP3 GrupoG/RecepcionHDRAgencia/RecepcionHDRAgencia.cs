@@ -6,21 +6,16 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace TPP3_GrupoG.Entrega_Cd
+namespace TPP3_GrupoG.RecepcionHDRAgencia
 {
-    public partial class EntregaCD : Form
+    public partial class RecepcionHDRAgencia : Form
     {
-        public EntregaCD()
+        public RecepcionHDRAgencia()
         {
             InitializeComponent();
         }
 
-        private void EntregaCD_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
+        private void fleteroTXT_Click(object sender, EventArgs e)
         {
 
         }
