@@ -174,7 +174,7 @@
             // textBox5
             // 
             textBox5.Location = new Point(323, 115);
-            textBox5.Margin = new Padding(2, 2, 2, 2);
+            textBox5.Margin = new Padding(2);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(232, 23);
             textBox5.TabIndex = 31;
@@ -182,7 +182,7 @@
             // textBox6
             // 
             textBox6.Location = new Point(323, 171);
-            textBox6.Margin = new Padding(2, 2, 2, 2);
+            textBox6.Margin = new Padding(2);
             textBox6.Name = "textBox6";
             textBox6.Size = new Size(232, 23);
             textBox6.TabIndex = 32;
@@ -190,7 +190,7 @@
             // textBox7
             // 
             textBox7.Location = new Point(321, 362);
-            textBox7.Margin = new Padding(2, 2, 2, 2);
+            textBox7.Margin = new Padding(2);
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(232, 23);
             textBox7.TabIndex = 33;
@@ -198,7 +198,7 @@
             // textBox8
             // 
             textBox8.Location = new Point(321, 405);
-            textBox8.Margin = new Padding(2, 2, 2, 2);
+            textBox8.Margin = new Padding(2);
             textBox8.Name = "textBox8";
             textBox8.Size = new Size(232, 23);
             textBox8.TabIndex = 34;
@@ -331,7 +331,7 @@
             // button1
             // 
             button1.Location = new Point(201, 117);
-            button1.Margin = new Padding(2, 2, 2, 2);
+            button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(71, 25);
             button1.TabIndex = 59;
@@ -343,7 +343,7 @@
             btn_Registrarcliente.BackColor = Color.Green;
             btn_Registrarcliente.ForeColor = SystemColors.ButtonHighlight;
             btn_Registrarcliente.Location = new Point(652, 489);
-            btn_Registrarcliente.Margin = new Padding(2, 2, 2, 2);
+            btn_Registrarcliente.Margin = new Padding(2);
             btn_Registrarcliente.Name = "btn_Registrarcliente";
             btn_Registrarcliente.Size = new Size(156, 38);
             btn_Registrarcliente.TabIndex = 60;
@@ -610,7 +610,7 @@
             Controls.Add(label3);
             Controls.Add(lbl_NameTutasa);
             Controls.Add(label1);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "ImposicionCallCenter";
             Text = "ImposicionCallCenter";
             Load += ImposicionCallCenter_Load;

@@ -37,11 +37,12 @@
             dniFleteroTXT = new TextBox();
             buscarFletero = new Button();
             dniFletero = new Label();
+            columnHeader1 = new ColumnHeader();
             SuspendLayout();
             // 
             // listView1
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { numGuia, direccion });
+            listView1.Columns.AddRange(new ColumnHeader[] { numGuia, direccion, columnHeader1 });
             listView1.Location = new Point(11, 48);
             listView1.Margin = new Padding(2);
             listView1.Name = "listView1";
@@ -119,6 +120,11 @@
             dniFletero.TabIndex = 11;
             dniFletero.Text = "DNI Fletero";
             // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "Entregar o recibir";
+            columnHeader1.Width = 180;
+            // 
             // RecepcionHDRAgencia
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -148,5 +154,6 @@
         private TextBox dniFleteroTXT;
         private Button buscarFletero;
         private Label dniFletero;
+        private ColumnHeader columnHeader1;
     }
 }
