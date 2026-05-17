@@ -141,7 +141,7 @@
             // provinciaLBL
             // 
             provinciaLBL.AutoSize = true;
-            provinciaLBL.Location = new Point(349, 227);
+            provinciaLBL.Location = new Point(318, 313);
             provinciaLBL.Name = "provinciaLBL";
             provinciaLBL.Size = new Size(56, 15);
             provinciaLBL.TabIndex = 128;
@@ -150,7 +150,7 @@
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(351, 295);
+            comboBox2.Location = new Point(320, 381);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(232, 23);
             comboBox2.TabIndex = 127;
@@ -158,7 +158,7 @@
             // Rdb_domicilio
             // 
             Rdb_domicilio.AutoSize = true;
-            Rdb_domicilio.Location = new Point(680, 425);
+            Rdb_domicilio.Location = new Point(763, 121);
             Rdb_domicilio.Margin = new Padding(3, 2, 3, 2);
             Rdb_domicilio.Name = "Rdb_domicilio";
             Rdb_domicilio.Size = new Size(86, 19);
@@ -199,7 +199,7 @@
             // comboBox3
             // 
             comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(351, 244);
+            comboBox3.Location = new Point(320, 330);
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(232, 23);
             comboBox3.TabIndex = 122;
@@ -207,7 +207,7 @@
             // localidadLBL
             // 
             localidadLBL.AutoSize = true;
-            localidadLBL.Location = new Point(349, 277);
+            localidadLBL.Location = new Point(318, 363);
             localidadLBL.Name = "localidadLBL";
             localidadLBL.Size = new Size(58, 15);
             localidadLBL.TabIndex = 121;
@@ -216,9 +216,9 @@
             // AgenciaCB
             // 
             AgenciaCB.FormattingEnabled = true;
-            AgenciaCB.Location = new Point(680, 458);
+            AgenciaCB.Location = new Point(329, 145);
             AgenciaCB.Name = "AgenciaCB";
-            AgenciaCB.Size = new Size(226, 23);
+            AgenciaCB.Size = new Size(520, 23);
             AgenciaCB.TabIndex = 120;
             // 
             // Agencia
@@ -232,7 +232,7 @@
             // CodigoPostalDestinatario
             // 
             CodigoPostalDestinatario.AutoSize = true;
-            CodigoPostalDestinatario.Location = new Point(349, 326);
+            CodigoPostalDestinatario.Location = new Point(318, 412);
             CodigoPostalDestinatario.Name = "CodigoPostalDestinatario";
             CodigoPostalDestinatario.Size = new Size(81, 15);
             CodigoPostalDestinatario.TabIndex = 118;
@@ -240,7 +240,7 @@
             // 
             // textBox10
             // 
-            textBox10.Location = new Point(351, 344);
+            textBox10.Location = new Point(320, 430);
             textBox10.Name = "textBox10";
             textBox10.Size = new Size(232, 23);
             textBox10.TabIndex = 117;
@@ -257,7 +257,7 @@
             // TipoPaquete
             // 
             TipoPaquete.AutoSize = true;
-            TipoPaquete.Location = new Point(689, 133);
+            TipoPaquete.Location = new Point(680, 219);
             TipoPaquete.Name = "TipoPaquete";
             TipoPaquete.Size = new Size(93, 15);
             TipoPaquete.TabIndex = 115;
@@ -266,16 +266,16 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(689, 151);
+            comboBox1.Location = new Point(680, 237);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
+            comboBox1.Size = new Size(147, 23);
             comboBox1.TabIndex = 114;
             // 
             // Btn_Volver
             // 
             Btn_Volver.BackColor = Color.DarkRed;
             Btn_Volver.ForeColor = SystemColors.ButtonHighlight;
-            Btn_Volver.Location = new Point(844, 517);
+            Btn_Volver.Location = new Point(741, 576);
             Btn_Volver.Margin = new Padding(3, 2, 3, 2);
             Btn_Volver.Name = "Btn_Volver";
             Btn_Volver.Size = new Size(108, 32);
@@ -287,7 +287,7 @@
             // 
             btn_Registrarcliente.BackColor = Color.Green;
             btn_Registrarcliente.ForeColor = SystemColors.ButtonHighlight;
-            btn_Registrarcliente.Location = new Point(680, 516);
+            btn_Registrarcliente.Location = new Point(577, 575);
             btn_Registrarcliente.Margin = new Padding(2);
             btn_Registrarcliente.Name = "btn_Registrarcliente";
             btn_Registrarcliente.Size = new Size(156, 33);
@@ -336,7 +336,7 @@
             // 
             // textBox13
             // 
-            textBox13.Location = new Point(689, 201);
+            textBox13.Location = new Point(680, 287);
             textBox13.Margin = new Padding(3, 2, 3, 2);
             textBox13.Name = "textBox13";
             textBox13.Size = new Size(147, 23);
@@ -345,7 +345,7 @@
             // lbl_Descripcion
             // 
             lbl_Descripcion.AutoSize = true;
-            lbl_Descripcion.Location = new Point(689, 184);
+            lbl_Descripcion.Location = new Point(680, 270);
             lbl_Descripcion.Margin = new Padding(2, 0, 2, 0);
             lbl_Descripcion.Name = "lbl_Descripcion";
             lbl_Descripcion.Size = new Size(69, 15);
@@ -356,7 +356,7 @@
             // 
             lbl_DetallePaquete.AutoSize = true;
             lbl_DetallePaquete.Font = new Font("Segoe UI", 10F);
-            lbl_DetallePaquete.Location = new Point(680, 96);
+            lbl_DetallePaquete.Location = new Point(671, 182);
             lbl_DetallePaquete.Margin = new Padding(2, 0, 2, 0);
             lbl_DetallePaquete.Name = "lbl_DetallePaquete";
             lbl_DetallePaquete.Size = new Size(130, 19);
@@ -366,7 +366,7 @@
             // lbl_TipoEntrega
             // 
             lbl_TipoEntrega.AutoSize = true;
-            lbl_TipoEntrega.Location = new Point(680, 366);
+            lbl_TipoEntrega.Location = new Point(329, 96);
             lbl_TipoEntrega.Margin = new Padding(2, 0, 2, 0);
             lbl_TipoEntrega.Name = "lbl_TipoEntrega";
             lbl_TipoEntrega.Size = new Size(90, 15);
@@ -376,7 +376,7 @@
             // Rdb_CD
             // 
             Rdb_CD.AutoSize = true;
-            Rdb_CD.Location = new Point(759, 391);
+            Rdb_CD.Location = new Point(533, 121);
             Rdb_CD.Margin = new Padding(3, 2, 3, 2);
             Rdb_CD.Name = "Rdb_CD";
             Rdb_CD.Size = new Size(147, 19);
@@ -388,7 +388,7 @@
             // Rdb_Agencia
             // 
             Rdb_Agencia.AutoSize = true;
-            Rdb_Agencia.Location = new Point(680, 391);
+            Rdb_Agencia.Location = new Point(329, 121);
             Rdb_Agencia.Margin = new Padding(3, 2, 3, 2);
             Rdb_Agencia.Name = "Rdb_Agencia";
             Rdb_Agencia.Size = new Size(68, 19);
@@ -400,7 +400,7 @@
             // lbl_TelefonoDestinatario
             // 
             lbl_TelefonoDestinatario.AutoSize = true;
-            lbl_TelefonoDestinatario.Location = new Point(353, 420);
+            lbl_TelefonoDestinatario.Location = new Point(322, 506);
             lbl_TelefonoDestinatario.Margin = new Padding(2, 0, 2, 0);
             lbl_TelefonoDestinatario.Name = "lbl_TelefonoDestinatario";
             lbl_TelefonoDestinatario.Size = new Size(53, 15);
@@ -410,7 +410,7 @@
             // lbl_direccionDestinatario
             // 
             lbl_direccionDestinatario.AutoSize = true;
-            lbl_direccionDestinatario.Location = new Point(349, 366);
+            lbl_direccionDestinatario.Location = new Point(320, 456);
             lbl_direccionDestinatario.Margin = new Padding(2, 0, 2, 0);
             lbl_direccionDestinatario.Name = "lbl_direccionDestinatario";
             lbl_direccionDestinatario.Size = new Size(57, 15);
@@ -420,7 +420,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(351, 181);
+            label4.Location = new Point(320, 267);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
             label4.Size = new Size(64, 15);
@@ -429,7 +429,7 @@
             // 
             // textBox8
             // 
-            textBox8.Location = new Point(351, 437);
+            textBox8.Location = new Point(320, 523);
             textBox8.Margin = new Padding(2);
             textBox8.Name = "textBox8";
             textBox8.Size = new Size(232, 23);
@@ -437,7 +437,7 @@
             // 
             // textBox7
             // 
-            textBox7.Location = new Point(351, 384);
+            textBox7.Location = new Point(320, 475);
             textBox7.Margin = new Padding(2);
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(232, 23);
@@ -445,7 +445,7 @@
             // 
             // textBox6
             // 
-            textBox6.Location = new Point(351, 198);
+            textBox6.Location = new Point(320, 284);
             textBox6.Margin = new Padding(2);
             textBox6.Name = "textBox6";
             textBox6.Size = new Size(232, 23);
@@ -453,7 +453,7 @@
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(351, 151);
+            textBox5.Location = new Point(320, 237);
             textBox5.Margin = new Padding(2);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(232, 23);
@@ -462,7 +462,7 @@
             // lbl_NombreDestinatario
             // 
             lbl_NombreDestinatario.AutoSize = true;
-            lbl_NombreDestinatario.Location = new Point(351, 125);
+            lbl_NombreDestinatario.Location = new Point(320, 211);
             lbl_NombreDestinatario.Margin = new Padding(2, 0, 2, 0);
             lbl_NombreDestinatario.Name = "lbl_NombreDestinatario";
             lbl_NombreDestinatario.Size = new Size(161, 15);
@@ -473,7 +473,7 @@
             // 
             lbl_DatosDestinatario.AutoSize = true;
             lbl_DatosDestinatario.Font = new Font("Segoe UI", 10F);
-            lbl_DatosDestinatario.Location = new Point(360, 96);
+            lbl_DatosDestinatario.Location = new Point(318, 182);
             lbl_DatosDestinatario.Margin = new Padding(2, 0, 2, 0);
             lbl_DatosDestinatario.Name = "lbl_DatosDestinatario";
             lbl_DatosDestinatario.Size = new Size(142, 19);
@@ -553,7 +553,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1008, 649);
+            ClientSize = new Size(865, 619);
             Controls.Add(label13);
             Controls.Add(label12);
             Controls.Add(label11);
