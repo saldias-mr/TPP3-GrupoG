@@ -654,7 +654,6 @@
         private Label CodigoPostalDestinatario;
         private Label Agencia;
         private ComboBox AgenciaCB;
-        private Label CDCb;
         private ComboBox comboBox2;
         private Label localidadLBL;
         private ComboBox comboBox3;
