@@ -51,7 +51,7 @@
             CBTipoPaquete = new ComboBox();
             Btn_Volver = new Button();
             btn_Registrarcliente = new Button();
-            button1 = new Button();
+            buttonBuscar = new Button();
             TBCliente = new TextBox();
             lbl_BuscarCliente = new Label();
             label2 = new Label();
@@ -154,6 +154,7 @@
             CBLocalidad.Name = "CBLocalidad";
             CBLocalidad.Size = new Size(232, 23);
             CBLocalidad.TabIndex = 127;
+            CBLocalidad.SelectedIndexChanged += CBLocalidad_SelectedIndexChanged;
             // 
             // Rdb_domicilio
             // 
@@ -204,6 +205,7 @@
             CBProvincia.Name = "CBProvincia";
             CBProvincia.Size = new Size(232, 23);
             CBProvincia.TabIndex = 122;
+            CBProvincia.SelectedIndexChanged += CBProvincia_SelectedIndexChanged;
             // 
             // localidadLBL
             // 
@@ -245,6 +247,7 @@
             TBDDCP.Name = "TBDDCP";
             TBDDCP.Size = new Size(232, 23);
             TBDDCP.TabIndex = 117;
+            TBDDCP.TextChanged += TBDDCP_TextChanged;
             // 
             // CodidoPostal
             // 
@@ -299,16 +302,16 @@
             btn_Registrarcliente.UseVisualStyleBackColor = false;
             btn_Registrarcliente.Click += btn_Registrarcliente_Click;
             // 
-            // button1
+            // buttonBuscar
             // 
-            button1.Location = new Point(183, 144);
-            button1.Margin = new Padding(2);
-            button1.Name = "button1";
-            button1.Size = new Size(91, 23);
-            button1.TabIndex = 111;
-            button1.Text = "Buscar";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            buttonBuscar.Location = new Point(183, 144);
+            buttonBuscar.Margin = new Padding(2);
+            buttonBuscar.Name = "buttonBuscar";
+            buttonBuscar.Size = new Size(91, 23);
+            buttonBuscar.TabIndex = 111;
+            buttonBuscar.Text = "Buscar";
+            buttonBuscar.UseVisualStyleBackColor = true;
+            buttonBuscar.Click += ButtonBuscar_Click;
             // 
             // TBCliente
             // 
@@ -449,6 +452,7 @@
             TBDDDireccion.Name = "TBDDDireccion";
             TBDDDireccion.Size = new Size(232, 23);
             TBDDDireccion.TabIndex = 97;
+            TBDDDireccion.TextChanged += TBDDDireccion_TextChanged_1;
             // 
             // TBDDDNI
             // 
@@ -584,7 +588,7 @@
             Controls.Add(CBTipoPaquete);
             Controls.Add(Btn_Volver);
             Controls.Add(btn_Registrarcliente);
-            Controls.Add(button1);
+            Controls.Add(buttonBuscar);
             Controls.Add(TBCliente);
             Controls.Add(lbl_BuscarCliente);
             Controls.Add(label2);
@@ -647,7 +651,7 @@
         private ComboBox CBTipoPaquete;
         private Button Btn_Volver;
         private Button btn_Registrarcliente;
-        private Button button1;
+        private Button buttonBuscar;
         private TextBox TBCliente;
         private Label lbl_BuscarCliente;
         private Label label2;

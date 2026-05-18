@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-
-
-namespace TPP3_GrupoG.ImposicionAgencia
+namespace TPP3_GrupoG.ImposicionCD
 {
     internal class Cliente
     {
@@ -18,3 +16,4 @@ namespace TPP3_GrupoG.ImposicionAgencia
         public required string Telefono { get; set; }
     }
 }
+

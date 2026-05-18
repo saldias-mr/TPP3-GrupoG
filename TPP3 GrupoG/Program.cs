@@ -1,6 +1,7 @@
 using System;
 using System.Windows.Forms;
 using TPP3_GrupoG.ImposicionAgencia;
+using TPP3_GrupoG.ImposicionCD;
 using TPP3_GrupoG.ConsultaEstado;
 using TPP3_GrupoG.HojadeRutaUM;
 using TPP3_GrupoG.Entregas;
@@ -23,7 +24,8 @@ namespace TPP3_GrupoG
             ApplicationConfiguration.Initialize();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new ImposicionAgencia());
+            //Application.Run(new TPP3_GrupoG.ImposicionAgencia.ImposicionAgencia());
+            Application.Run(new TPP3_GrupoG.ImposicionCD.ImposicionCD());
             //Application.Run(new Tracking());
             //Application.Run(new EntregaAgencia());
             //Application.Run(new EntregaCD());

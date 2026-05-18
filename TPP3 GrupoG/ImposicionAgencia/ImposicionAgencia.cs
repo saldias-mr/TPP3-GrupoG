@@ -86,22 +86,21 @@ namespace TPP3_GrupoG.ImposicionAgencia
         private void Rdb_domicilio_CheckedChanged(object sender, EventArgs e)
         {
 
-            if (Rdb_domicilio.Checked)
-            {
-                // 1. Limpiar el ComboBox y prepararlo para mostrar solo la dirección
-                CBTipoEntrega.DataSource = null;
-                CBTipoEntrega.Items.Clear();
+            ActualizarDireccionDomicilio();
 
-                // 2. Obtener la dirección completa desde los campos de texto
-                string direccionCompleta = $"{labelDireccionCliente.Text} {labelLocalidadCliente.Text} {labelProvinciaCliente.Text} {labelCPCliente.Text}";
-
-                // 3. Agregar la dirección como único ítem (para que aparezca seleccionada)
-                CBTipoEntrega.Items.Add(direccionCompleta);
-                CBTipoEntrega.SelectedIndex = 0; // Para que quede seleccionada
-
-                // 4. Deshabilitar el ComboBox para que el usuario no pueda cambiarlo
-                CBTipoEntrega.Enabled = false;
-            }
+            //if (Rdb_domicilio.Checked)
+            //{
+            // 1. Limpiar el ComboBox y prepararlo para mostrar solo la dirección
+            //CBTipoEntrega.DataSource = null;
+            //CBTipoEntrega.Items.Clear();
+            // 2. Obtener la dirección completa desde los campos de texto
+            //string direccionCompleta = $"{TBDDDireccion.Text} {CBLocalidad.Text} {CBProvincia.Text} {TBDDCP.Text}";
+            // 3. Agregar la dirección como único ítem (para que aparezca seleccionada)
+            //CBTipoEntrega.Items.Add(direccionCompleta);
+            //CBTipoEntrega.SelectedIndex = 0; // Para que quede seleccionada
+            // 4. Deshabilitar el ComboBox para que el usuario no pueda cambiarlo
+            //CBTipoEntrega.Enabled = false;
+            //}
 
         }
 
@@ -121,7 +120,7 @@ namespace TPP3_GrupoG.ImposicionAgencia
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void ButtonBuscar_Click(object sender, EventArgs e)
         {
             // 1.Obtener el DNI ingresado
             string dniBuscado = TBCliente.Text.Trim();
@@ -135,7 +134,7 @@ namespace TPP3_GrupoG.ImposicionAgencia
 
             // 3. Buscar el cliente en la lista del modelo
             List<Cliente> clientes = modelo.ObtenerClientes();
-            Cliente clienteEncontrado = clientes.FirstOrDefault(c => c.DNI == dniBuscado);
+            Cliente? clienteEncontrado = clientes.FirstOrDefault(c => c.DNI == dniBuscado);
 
             // 4. Si se encontró, actualizar los labels
             if (clienteEncontrado != null)
@@ -166,8 +165,7 @@ namespace TPP3_GrupoG.ImposicionAgencia
         {
             // 1. Validar que los campos obligatorios estén completos
             if (string.IsNullOrWhiteSpace(TBDDNombre.Text) ||
-                string.IsNullOrWhiteSpace(TBDDDNI.Text) ||
-                string.IsNullOrWhiteSpace(TBDPDescripcion.Text))
+                string.IsNullOrWhiteSpace(TBDDDNI.Text))
             {
                 MessageBox.Show("Por favor, complete los campos obligatorios: Nombre, DNI y Descripción del paquete.", "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -236,8 +234,9 @@ namespace TPP3_GrupoG.ImposicionAgencia
             if (CBLocalidad.Items.Count > 0) CBLocalidad.SelectedIndex = -1;
             CBTipoPaquete.SelectedIndex = -1; // Para dejarlo vacío
             CBTipoEntrega.SelectedIndex = -1; // Para dejarlo vacío
+            CBTipoEntrega.Enabled = true;     // <--- ¡AGREGA ESTO! Para reactivar el combobox
 
-            // RadioButtons (opcional: desmarcarlos)
+            // RadioButtons (desmarcarlos para reiniciar la UI)
             Rdb_Agencia.Checked = false;
             Rdb_CD.Checked = false;
             Rdb_domicilio.Checked = false;
@@ -255,6 +254,30 @@ namespace TPP3_GrupoG.ImposicionAgencia
             TBCliente.Clear();
         }
 
+        private void ActualizarDireccionDomicilio()
+        {
+            // Solo actualizamos si la opción "A domicilio" está seleccionada
+            if (Rdb_domicilio.Checked)
+            {
+                // 1. Limpiar el ComboBox
+                CBTipoEntrega.DataSource = null;
+                CBTipoEntrega.Items.Clear();
+
+                // 2. Obtener la dirección completa desde los CAMPOS DEL DESTINATARIO
+                string direccionCompleta = $"{TBDDDireccion.Text} {CBLocalidad.Text} {CBProvincia.Text} {TBDDCP.Text}".Trim();
+
+                // 3. Agregar la dirección como único ítem
+                if (!string.IsNullOrEmpty(direccionCompleta))
+                {
+                    CBTipoEntrega.Items.Add(direccionCompleta);
+                    CBTipoEntrega.SelectedIndex = 0;
+                }
+
+                // 4. Deshabilitar el ComboBox
+                CBTipoEntrega.Enabled = false;
+            }
+        }
+
         private void Btn_Volver_Click(object sender, EventArgs e)
         {
             // Opción 1: Cerrar el formulario
@@ -262,6 +285,59 @@ namespace TPP3_GrupoG.ImposicionAgencia
 
             // Opción 2 (Alternativa para limpiarlo en vez de cerrar
             // LimpiarFormulario();
+        }
+
+        private void CBProvincia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            // Verifica que haya una provincia seleccionada (índice válido y no vacío)
+            if (CBProvincia.SelectedIndex != -1)
+            {
+                // Obtén el objeto Provincia seleccionado de forma segura
+                if (CBProvincia.SelectedItem is Provincia provinciaSeleccionada)
+                {
+                    // Guarda sus datos para usarlos al confirmar la imposición
+                    int idProvincia = provinciaSeleccionada.Id;
+                    string nombreProvincia = provinciaSeleccionada.Nombre;
+                }
+            }
+            ActualizarDireccionDomicilio();
+        }
+
+        private void CBLocalidad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            // Verifica que haya una localidad seleccionada
+            if (CBLocalidad.SelectedIndex != -1)
+            {
+                // Obtén el objeto Localidad seleccionado de forma segura
+                if (CBLocalidad.SelectedItem is Localidad localidadSeleccionada)
+                {
+                    // Guarda sus datos para usarlos al confirmar la imposición
+                    int idLocalidad = localidadSeleccionada.Id;
+                    string nombreLocalidad = localidadSeleccionada.Nombre;
+                }
+            }
+            ActualizarDireccionDomicilio();
+        }
+
+        private void TBDDDireccion_TextChanged(object sender, EventArgs e)
+        {
+            // Si el usuario está escribiendo y "A domicilio" está seleccionado, actualizamos el ComboBox
+            if (Rdb_domicilio.Checked)
+            {
+                Rdb_domicilio_CheckedChanged(sender, e); // Esto dispara la lógica de actualización
+            }
+        }
+
+        private void TBDDDireccion_TextChanged_1(object sender, EventArgs e)
+        {
+            ActualizarDireccionDomicilio();
+        }
+
+        private void TBDDCP_TextChanged(object sender, EventArgs e)
+        {
+            ActualizarDireccionDomicilio();
         }
     }
 }
