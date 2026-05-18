@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using TPP3_GrupoG.ImposicionCD;
+using TPP3_GrupoG.ImposicionCallCenter;
 
-namespace TPP3_GrupoG.ImposicionCD
+namespace TPP3_GrupoG.ImposicionCallCenter
 {
-    internal class ImposicionCDModelo
+    internal class ImposicionCallCenterModelo
     {
-
         internal List<CentroDeDistribucion> ObtenerCDS()
         {
             return new List<CentroDeDistribucion>
@@ -137,6 +136,5 @@ namespace TPP3_GrupoG.ImposicionCD
                 new Cliente { Id = 10, NombreYApellido = "Natalia Sosa", DNI = "34567123", Provincia = "Buenos Aires", Localidad = "Mar del Plata", CodigoPostal = "7600", Direccion = "Buenos Aires 1234", Telefono = "0223-555-6666" }
             };
         }
-
     }
 }

@@ -5,7 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using TPP3_GrupoG.ImposicionAgencia;
+
 
 namespace TPP3_GrupoG.ImposicionCD
 {
@@ -74,7 +74,7 @@ namespace TPP3_GrupoG.ImposicionCD
             if (Rdb_CD.Checked)
             {
                 // Obtener la lista de CDs
-                List<CentrosDeDistribucion> cds = modelo.ObtenerCDS();
+                List<CentroDeDistribucion> cds = modelo.ObtenerCDS();
                 CargarComboBoxTipoEntrega(cds, "Nombre", "Id");
             }
         }
@@ -316,5 +316,6 @@ namespace TPP3_GrupoG.ImposicionCD
         {
             ActualizarDireccionDomicilio();
         }
+
     }
 }

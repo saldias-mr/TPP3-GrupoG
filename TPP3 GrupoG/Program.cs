@@ -25,7 +25,8 @@ namespace TPP3_GrupoG
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new TPP3_GrupoG.ImposicionAgencia.ImposicionAgencia());
-            Application.Run(new TPP3_GrupoG.ImposicionCD.ImposicionCD());
+            //Application.Run(new TPP3_GrupoG.ImposicionCD.ImposicionCD());
+            Application.Run(new TPP3_GrupoG.ImposicionCallCenter.ImposicionCallCenter());
             //Application.Run(new Tracking());
             //Application.Run(new EntregaAgencia());
             //Application.Run(new EntregaCD());

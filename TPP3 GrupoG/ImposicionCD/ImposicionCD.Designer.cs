@@ -471,6 +471,7 @@
             cbTipoEntrega.Name = "cbTipoEntrega";
             cbTipoEntrega.Size = new Size(451, 23);
             cbTipoEntrega.TabIndex = 118;
+
             // 
             // Agencia
             // 
