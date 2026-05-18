@@ -120,6 +120,23 @@ namespace TPP3_GrupoG.ImposicionAgencia
             };
         }
 
+        internal List<Cliente> ObtenerClientes()
+        {
+            return new List<Cliente>
+            {
+                new Cliente { Id = 1, NombreYApellido = "Juan Perez", DNI = "12345678", Provincia = "Buenos Aires", Localidad = "Lanús", CodigoPostal = "1824", Direccion = "Av. Hipólito Yrigoyen 3200", Telefono = "011-4241-1234" },
+                new Cliente { Id = 2, NombreYApellido = "Maria Gomez", DNI = "23456789", Provincia = "Buenos Aires", Localidad = "Capital Federal", CodigoPostal = "1000", Direccion = "Callao 1234", Telefono = "011-4321-5678" },
+                new Cliente { Id = 3, NombreYApellido = "Carlos Lopez", DNI = "34567890", Provincia = "Córdoba", Localidad = "Córdoba Capital", CodigoPostal = "5000", Direccion = "San Martín 567", Telefono = "0351-123-4567" },
+                new Cliente { Id = 4, NombreYApellido = "Laura Fernandez", DNI = "45678901", Provincia = "Santa Fe", Localidad = "Rosario", CodigoPostal = "2000", Direccion = "Santa Fe 890", Telefono = "0341-456-7890" },
+                new Cliente { Id = 5, NombreYApellido = "Pedro Rodriguez", DNI = "56789012", Provincia = "Mendoza", Localidad = "Mendoza Capital", CodigoPostal = "5500", Direccion = "Las Heras 234", Telefono = "0261-123-4567" },
+                new Cliente { Id = 6, NombreYApellido = "Ana Martinez", DNI = "67890123", Provincia = "Buenos Aires", Localidad = "La Plata", CodigoPostal = "1900", Direccion = "Calle 10 456", Telefono = "0221-123-4567" },
+                new Cliente { Id = 7, NombreYApellido = "Jose Gonzalez", DNI = "78901234", Provincia = "Buenos Aires", Localidad = "Avellaneda", CodigoPostal = "1870", Direccion = "Mitre 789", Telefono = "011-4201-1111" },
+                new Cliente { Id = 8, NombreYApellido = "Silvia Garcia", DNI = "89012345", Provincia = "Tucumán", Localidad = "San Miguel de Tucumán", CodigoPostal = "4000", Direccion = "25 de Mayo 123", Telefono = "0381-222-3333" },
+                new Cliente { Id = 9, NombreYApellido = "Oscar Diaz", DNI = "90123456", Provincia = "Neuquén", Localidad = "Neuquén Capital", CodigoPostal = "8300", Direccion = "Rivadavia 456", Telefono = "0299-444-5555" },
+                new Cliente { Id = 10, NombreYApellido = "Natalia Sosa", DNI = "34567123", Provincia = "Buenos Aires", Localidad = "Mar del Plata", CodigoPostal = "7600", Direccion = "Buenos Aires 1234", Telefono = "0223-555-6666" }
+            };
+        }
+
 
     }
 }

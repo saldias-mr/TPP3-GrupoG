@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq; // Para usar .FirstOrDefault()
 using System.Text;
 using System.Windows.Forms;
 
@@ -39,7 +40,7 @@ namespace TPP3_GrupoG.ImposicionAgencia
             List<Localidad> localidades = modelo.ObtenerLocalidades();
             if (localidades != null && localidades.Count > 0)
             {
-               
+
                 CBLocalidad.DataSource = localidades;
                 CBLocalidad.DisplayMember = "Nombre";
                 CBLocalidad.ValueMember = "Id";
@@ -120,6 +121,95 @@ namespace TPP3_GrupoG.ImposicionAgencia
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // 1.Obtener el DNI ingresado
+            string dniBuscado = TBCliente.Text.Trim();
+
+            // 2. Validar que el campo no esté vacío
+            if (string.IsNullOrEmpty(dniBuscado))
+            {
+                MessageBox.Show("Por favor, ingrese un DNI para buscar.");
+                return;
+            }
+
+            // 3. Buscar el cliente en la lista del modelo
+            List<Cliente> clientes = modelo.ObtenerClientes();
+            Cliente clienteEncontrado = clientes.FirstOrDefault(c => c.DNI == dniBuscado);
+
+            // 4. Si se encontró, actualizar los labels
+            if (clienteEncontrado != null)
+            {
+                labelNombreyApellido.Text = clienteEncontrado.NombreYApellido;
+                labelDNI.Text = clienteEncontrado.DNI;
+                labelProvinciaCliente.Text = clienteEncontrado.Provincia;
+                labelLocalidadCliente.Text = clienteEncontrado.Localidad;
+                labelCPCliente.Text = clienteEncontrado.CodigoPostal;
+                labelDireccionCliente.Text = clienteEncontrado.Direccion;
+                labelTelefonoCliente.Text = clienteEncontrado.Telefono;
+            }
+            else
+            {
+                // 5. Si no se encontró, limpiar y mostrar mensaje
+                MessageBox.Show("No se encontró ningún cliente con ese DNI.");
+                labelNombreyApellido.Text = "[Nombre y apellido / Nombre empresa]";
+                labelDNI.Text = "[XXXXXXXXXX]";
+                labelProvinciaCliente.Text = "[Buenos Aires]";
+                labelLocalidadCliente.Text = "[Localidad]";
+                labelCPCliente.Text = "[XXXX]";
+                labelDireccionCliente.Text = "[Dirección]";
+                labelTelefonoCliente.Text = "[XXXXXXXXXX]";
+            }
+        }
+
+        private void btn_Registrarcliente_Click(object sender, EventArgs e)
+        {
+            // 1. Validar que los campos obligatorios estén completos
+            if (string.IsNullOrWhiteSpace(TBDDNombre.Text) ||
+                string.IsNullOrWhiteSpace(TBDDDNI.Text) ||
+                string.IsNullOrWhiteSpace(TBDPDescripcion.Text))
+            {
+                MessageBox.Show("Por favor, complete los campos obligatorios: Nombre, DNI y Descripción del paquete.", "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            // 2. Obtener los valores de los TextBox
+            string nombreDestinatario = TBDDNombre.Text.Trim();
+            string dniDestinatario = TBDDDNI.Text.Trim();
+            string cpDestinatario = TBDDCP.Text.Trim();
+            string direccionDestinatario = TBDDDireccion.Text.Trim();
+            string telefonoDestinatario = TBDDTelefono.Text.Trim();
+            string descripcionPaquete = TBDPDescripcion.Text.Trim();
+            // 3. Obtener datos de los ComboBox (Provincia, Localidad, Tipo de Paquete)
+            // Asumo que el ComboBox de Provincia se llama 'cbProvinciaDestinatario' y el de Localidad 'cbLocalidadDestinatario'
+            string provinciaDestinatario = CBProvincia.Text;
+            string localidadDestinatario = CBLocalidad.Text;
+            string tipoPaquete = CBTipoPaquete.Text; // Muestra el nombre del paquete seleccionado
+
+            // 4. Obtener datos del Cliente (Remitente) desde los Labels
+            string nombreRemitente = labelNombreyApellido.Text;
+            string dniRemitente = labelDNI.Text;
+
+            // 5. Validar si el usuario seleccionó un lugar de entrega válido (Agencia, CD o Domicilio)
+            // El ComboBox CBTipoEntrega es el que se llena según los RadioButtons
+            string lugarEntrega = CBTipoEntrega.Text;
+            if (string.IsNullOrWhiteSpace(lugarEntrega) || lugarEntrega == "Seleccione una opción")
+            {
+                MessageBox.Show("Debe seleccionar un lugar de entrega (Agencia, CD o Domicilio).", "Lugar de entrega no seleccionado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // 6. Generar un número de guía único (simulado con un GUID)
+            string numeroGuia = Guid.NewGuid().ToString("N").Substring(0, 10).ToUpper(); // Ejemplo: 4F7A9C2D1B
+
+            // 7. Guardar la imposición (acá podrías llamar a un método del modelo para guardar en BD)
+            // Por ahora, simulamos el guardado con un mensaje.
+            MessageBox.Show($"Imposición registrada exitosamente.\nNúmero de Guía: {numeroGuia}\n\nResumen:\nRemitente: {nombreRemitente}\nDestinatario: {nombreDestinatario}\nPaquete: {tipoPaquete}\nLugar de entrega: {lugarEntrega}\nDescripción: {descripcionPaquete}",
+                            "Operación exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // 8. (Opcional) Limpiar los campos para una nueva carga
+            LimpiarFormulario();
+        }
+
         private void CargarComboBoxTipoEntrega<T>(IList<T> lista, string displayMember, string valueMember)
         {
             if (lista == null || lista.Count == 0)
@@ -134,7 +224,47 @@ namespace TPP3_GrupoG.ImposicionAgencia
             CBTipoEntrega.ValueMember = valueMember;
         }
 
+        private void LimpiarFormulario()
+        {
+            // TextBox del Destinatario
+            TBDDNombre.Clear();
+            TBDDDNI.Clear();
+            TBDDCP.Clear();
+            TBDDDireccion.Clear();
+            TBDDTelefono.Clear();
+            TBDPDescripcion.Clear();
 
+            // ComboBox
+            if (CBProvincia.Items.Count > 0) CBProvincia.SelectedIndex = -1;
+            if (CBLocalidad.Items.Count > 0) CBLocalidad.SelectedIndex = -1;
+            CBTipoPaquete.SelectedIndex = -1; // Para dejarlo vacío
+            CBTipoEntrega.SelectedIndex = -1; // Para dejarlo vacío
 
+            // RadioButtons (opcional: desmarcarlos)
+            Rdb_Agencia.Checked = false;
+            Rdb_CD.Checked = false;
+            Rdb_domicilio.Checked = false;
+
+            // Labels del Cliente (Restaurar valores por defecto)
+            labelNombreyApellido.Text = "[Nombre de la empresa]";
+            labelDNI.Text = "[XXXXXXXXXX]";
+            labelProvinciaCliente.Text = "[Buenos Aires]";
+            labelLocalidadCliente.Text = "[Localidad]";
+            labelCPCliente.Text = "[XXXX]";
+            labelDireccionCliente.Text = "[Dirección]";
+            labelTelefonoCliente.Text = "[XXXXXXXXXX]";
+
+            // TextBox de búsqueda
+            TBCliente.Clear();
+        }
+
+        private void Btn_Volver_Click(object sender, EventArgs e)
+        {
+            // Opción 1: Cerrar el formulario
+            this.Close();
+
+            // Opción 2 (Alternativa para limpiarlo en vez de cerrar
+            // LimpiarFormulario();
+        }
     }
 }
