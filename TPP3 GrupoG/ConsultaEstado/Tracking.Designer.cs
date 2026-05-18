@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            textBox1 = new TextBox();
-            button1 = new Button();
-            listView1 = new ListView();
+            numGuiaTXT = new TextBox();
+            BuscarGuiaBTN = new Button();
+            moviEncomiendaLIST = new ListView();
             UltimaUbicacion = new ColumnHeader();
             Estado = new ColumnHeader();
             Cliente = new ColumnHeader();
@@ -40,51 +40,47 @@
             lbl_NameTutasa = new Label();
             label3 = new Label();
             label4 = new Label();
-            Btn_Volver = new Button();
+            VolverBTN = new Button();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(44, 115);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(35, 92);
             label1.Name = "label1";
-            label1.Size = new Size(160, 25);
+            label1.Size = new Size(133, 20);
             label1.TabIndex = 0;
             label1.Text = "Ingrese N° de Guía";
-            label1.Click += label1_Click;
             // 
-            // textBox1
+            // numGuiaTXT
             // 
-            textBox1.Location = new Point(326, 115);
-            textBox1.Margin = new Padding(4, 5, 4, 5);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(521, 31);
-            textBox1.TabIndex = 1;
-            textBox1.TextChanged += textBox1_TextChanged;
+            numGuiaTXT.Location = new Point(261, 92);
+            numGuiaTXT.Margin = new Padding(3, 4, 3, 4);
+            numGuiaTXT.Name = "numGuiaTXT";
+            numGuiaTXT.Size = new Size(418, 27);
+            numGuiaTXT.TabIndex = 1;
             // 
-            // button1
+            // BuscarGuiaBTN
             // 
-            button1.Location = new Point(867, 115);
-            button1.Margin = new Padding(4, 5, 4, 5);
-            button1.Name = "button1";
-            button1.Size = new Size(113, 38);
-            button1.TabIndex = 2;
-            button1.Text = "Buscar";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            BuscarGuiaBTN.Location = new Point(694, 92);
+            BuscarGuiaBTN.Margin = new Padding(3, 4, 3, 4);
+            BuscarGuiaBTN.Name = "BuscarGuiaBTN";
+            BuscarGuiaBTN.Size = new Size(90, 30);
+            BuscarGuiaBTN.TabIndex = 2;
+            BuscarGuiaBTN.Text = "Buscar";
+            BuscarGuiaBTN.UseVisualStyleBackColor = true;
+            BuscarGuiaBTN.Click += buscarGuiaBTN_Click;
             // 
-            // listView1
+            // moviEncomiendaLIST
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { UltimaUbicacion, Estado, Cliente, Destinatario, FechaCreacion });
-            listView1.Location = new Point(44, 257);
-            listView1.Margin = new Padding(4, 5, 4, 5);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(1264, 256);
-            listView1.TabIndex = 4;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
-            listView1.SelectedIndexChanged += listView1_SelectedIndexChanged;
+            moviEncomiendaLIST.Columns.AddRange(new ColumnHeader[] { UltimaUbicacion, Estado, Cliente, Destinatario, FechaCreacion });
+            moviEncomiendaLIST.Location = new Point(35, 206);
+            moviEncomiendaLIST.Margin = new Padding(3, 4, 3, 4);
+            moviEncomiendaLIST.Name = "moviEncomiendaLIST";
+            moviEncomiendaLIST.Size = new Size(1012, 206);
+            moviEncomiendaLIST.TabIndex = 4;
+            moviEncomiendaLIST.UseCompatibleStateImageBehavior = false;
+            moviEncomiendaLIST.View = View.Details;
             // 
             // UltimaUbicacion
             // 
@@ -114,60 +110,57 @@
             // lbl_NameTutasa
             // 
             lbl_NameTutasa.Font = new Font("Segoe UI", 16F);
-            lbl_NameTutasa.Location = new Point(30, 12);
-            lbl_NameTutasa.Margin = new Padding(4, 0, 4, 0);
+            lbl_NameTutasa.Location = new Point(24, 10);
             lbl_NameTutasa.Name = "lbl_NameTutasa";
-            lbl_NameTutasa.Size = new Size(214, 58);
+            lbl_NameTutasa.Size = new Size(171, 46);
             lbl_NameTutasa.TabIndex = 11;
             lbl_NameTutasa.Text = "TUTASA S.A";
             // 
             // label3
             // 
             label3.Font = new Font("Segoe UI", 16F);
-            label3.Location = new Point(240, 12);
-            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Location = new Point(192, 10);
             label3.Name = "label3";
-            label3.Size = new Size(760, 58);
+            label3.Size = new Size(608, 46);
             label3.TabIndex = 12;
             label3.Text = "Consultar estado e historial de una guía (tracking)";
-            label3.Click += label3_Click;
             // 
             // label4
             // 
             label4.Font = new Font("Segoe UI", 12F);
-            label4.Location = new Point(44, 202);
-            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Location = new Point(35, 162);
             label4.Name = "label4";
-            label4.Size = new Size(536, 50);
+            label4.Size = new Size(429, 40);
             label4.TabIndex = 14;
             label4.Text = "Informacion de Movimientos de la Encomienda";
             // 
-            // Btn_Volver
+            // VolverBTN
             // 
-            Btn_Volver.BackColor = Color.DarkRed;
-            Btn_Volver.ForeColor = SystemColors.ButtonHighlight;
-            Btn_Volver.Location = new Point(1156, 670);
-            Btn_Volver.Margin = new Padding(4, 5, 4, 5);
-            Btn_Volver.Name = "Btn_Volver";
-            Btn_Volver.Size = new Size(154, 62);
-            Btn_Volver.TabIndex = 62;
-            Btn_Volver.Text = "Cancelar/Volver";
-            Btn_Volver.UseVisualStyleBackColor = false;
+            VolverBTN.BackColor = Color.DarkRed;
+            VolverBTN.ForeColor = SystemColors.ButtonHighlight;
+            VolverBTN.Location = new Point(925, 536);
+            VolverBTN.Margin = new Padding(3, 4, 3, 4);
+            VolverBTN.Name = "VolverBTN";
+            VolverBTN.Size = new Size(123, 50);
+            VolverBTN.TabIndex = 62;
+            VolverBTN.Text = "Cancelar/Volver";
+            VolverBTN.UseVisualStyleBackColor = false;
+            VolverBTN.Click += VolverBTN_Click;
             // 
             // Tracking
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1326, 750);
-            Controls.Add(Btn_Volver);
+            ClientSize = new Size(1061, 600);
+            Controls.Add(VolverBTN);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(lbl_NameTutasa);
-            Controls.Add(listView1);
-            Controls.Add(button1);
-            Controls.Add(textBox1);
+            Controls.Add(moviEncomiendaLIST);
+            Controls.Add(BuscarGuiaBTN);
+            Controls.Add(numGuiaTXT);
             Controls.Add(label1);
-            Margin = new Padding(4, 5, 4, 5);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Tracking";
             Text = "Tracking";
             Load += Tracking_Load;
@@ -179,15 +172,15 @@
         #endregion
 
         private Label label1;
-        private TextBox textBox1;
-        private Button button1;
-        private ListView listView1;
+        private TextBox numGuiaTXT;
+        private Button BuscarGuiaBTN;
+        private ListView moviEncomiendaLIST;
         private ColumnHeader UltimaUbicacion;
         private ColumnHeader Estado;
         public Label lbl_NameTutasa;
         private Label label3;
         public Label label4;
-        private Button Btn_Volver;
+        private Button VolverBTN;
         private ColumnHeader Cliente;
         private ColumnHeader Destinatario;
         private ColumnHeader FechaCreacion;
