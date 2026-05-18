@@ -28,28 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listView1 = new ListView();
+            listView_HDR = new ListView();
             numGuia = new ColumnHeader();
             direccion = new ColumnHeader();
+            columnHeader1 = new ColumnHeader();
             guiasAsociadas = new Label();
-            button1 = new Button();
-            button2 = new Button();
+            btn_Confirma = new Button();
+            btn_Salir = new Button();
             dniFleteroTXT = new TextBox();
             buscarFletero = new Button();
             dniFletero = new Label();
-            columnHeader1 = new ColumnHeader();
             SuspendLayout();
             // 
-            // listView1
+            // listView_HDR
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { numGuia, direccion, columnHeader1 });
-            listView1.Location = new Point(11, 48);
-            listView1.Margin = new Padding(2);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(559, 178);
-            listView1.TabIndex = 7;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
+            listView_HDR.Columns.AddRange(new ColumnHeader[] { numGuia, direccion, columnHeader1 });
+            listView_HDR.Location = new Point(13, 64);
+            listView_HDR.Margin = new Padding(2, 3, 2, 3);
+            listView_HDR.Name = "listView_HDR";
+            listView_HDR.Size = new Size(638, 236);
+            listView_HDR.TabIndex = 7;
+            listView_HDR.UseCompatibleStateImageBehavior = false;
+            listView_HDR.View = View.Details;
             // 
             // numGuia
             // 
@@ -61,83 +61,86 @@
             direccion.Text = "Dirección";
             direccion.Width = 90;
             // 
-            // guiasAsociadas
-            // 
-            guiasAsociadas.AutoSize = true;
-            guiasAsociadas.Location = new Point(11, 31);
-            guiasAsociadas.Margin = new Padding(2, 0, 2, 0);
-            guiasAsociadas.Name = "guiasAsociadas";
-            guiasAsociadas.Size = new Size(36, 15);
-            guiasAsociadas.TabIndex = 8;
-            guiasAsociadas.Text = "Guías";
-            // 
-            // button1
-            // 
-            button1.Location = new Point(413, 230);
-            button1.Margin = new Padding(2);
-            button1.Name = "button1";
-            button1.Size = new Size(76, 25);
-            button1.TabIndex = 9;
-            button1.Text = "Confirmar recepción";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(493, 230);
-            button2.Margin = new Padding(2);
-            button2.Name = "button2";
-            button2.Size = new Size(76, 25);
-            button2.TabIndex = 10;
-            button2.Text = "Salir";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // dniFleteroTXT
-            // 
-            dniFleteroTXT.Location = new Point(86, 9);
-            dniFleteroTXT.Margin = new Padding(2);
-            dniFleteroTXT.Name = "dniFleteroTXT";
-            dniFleteroTXT.Size = new Size(106, 23);
-            dniFleteroTXT.TabIndex = 13;
-            // 
-            // buscarFletero
-            // 
-            buscarFletero.Location = new Point(207, 8);
-            buscarFletero.Margin = new Padding(2);
-            buscarFletero.Name = "buscarFletero";
-            buscarFletero.Size = new Size(78, 24);
-            buscarFletero.TabIndex = 12;
-            buscarFletero.Text = "Buscar";
-            buscarFletero.UseVisualStyleBackColor = true;
-            // 
-            // dniFletero
-            // 
-            dniFletero.AutoSize = true;
-            dniFletero.Location = new Point(11, 9);
-            dniFletero.Margin = new Padding(2, 0, 2, 0);
-            dniFletero.Name = "dniFletero";
-            dniFletero.Size = new Size(66, 15);
-            dniFletero.TabIndex = 11;
-            dniFletero.Text = "DNI Fletero";
-            // 
             // columnHeader1
             // 
             columnHeader1.Text = "Entregar o recibir";
             columnHeader1.Width = 180;
             // 
+            // guiasAsociadas
+            // 
+            guiasAsociadas.AutoSize = true;
+            guiasAsociadas.Location = new Point(13, 41);
+            guiasAsociadas.Margin = new Padding(2, 0, 2, 0);
+            guiasAsociadas.Name = "guiasAsociadas";
+            guiasAsociadas.Size = new Size(45, 20);
+            guiasAsociadas.TabIndex = 8;
+            guiasAsociadas.Text = "Guías";
+            // 
+            // btn_Confirma
+            // 
+            btn_Confirma.Location = new Point(472, 307);
+            btn_Confirma.Margin = new Padding(2, 3, 2, 3);
+            btn_Confirma.Name = "btn_Confirma";
+            btn_Confirma.Size = new Size(87, 33);
+            btn_Confirma.TabIndex = 9;
+            btn_Confirma.Text = "Confirmar recepción";
+            btn_Confirma.UseVisualStyleBackColor = true;
+            btn_Confirma.Click += button1_Click;
+            // 
+            // btn_Salir
+            // 
+            btn_Salir.Location = new Point(563, 307);
+            btn_Salir.Margin = new Padding(2, 3, 2, 3);
+            btn_Salir.Name = "btn_Salir";
+            btn_Salir.Size = new Size(87, 33);
+            btn_Salir.TabIndex = 10;
+            btn_Salir.Text = "Salir";
+            btn_Salir.UseVisualStyleBackColor = true;
+            btn_Salir.Click += btn_Salir_Click;
+            // 
+            // dniFleteroTXT
+            // 
+            dniFleteroTXT.Location = new Point(98, 12);
+            dniFleteroTXT.Margin = new Padding(2, 3, 2, 3);
+            dniFleteroTXT.Name = "dniFleteroTXT";
+            dniFleteroTXT.Size = new Size(121, 27);
+            dniFleteroTXT.TabIndex = 13;
+            dniFleteroTXT.TextChanged += dniFleteroTXT_TextChanged;
+            // 
+            // buscarFletero
+            // 
+            buscarFletero.Location = new Point(237, 11);
+            buscarFletero.Margin = new Padding(2, 3, 2, 3);
+            buscarFletero.Name = "buscarFletero";
+            buscarFletero.Size = new Size(89, 32);
+            buscarFletero.TabIndex = 12;
+            buscarFletero.Text = "Buscar";
+            buscarFletero.UseVisualStyleBackColor = true;
+            buscarFletero.Click += buscarFletero_Click;
+            // 
+            // dniFletero
+            // 
+            dniFletero.AutoSize = true;
+            dniFletero.Location = new Point(13, 12);
+            dniFletero.Margin = new Padding(2, 0, 2, 0);
+            dniFletero.Name = "dniFletero";
+            dniFletero.Size = new Size(85, 20);
+            dniFletero.TabIndex = 11;
+            dniFletero.Text = "DNI Fletero";
+            // 
             // RecepcionHDRAgencia
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(589, 276);
+            ClientSize = new Size(673, 368);
             Controls.Add(dniFleteroTXT);
             Controls.Add(buscarFletero);
             Controls.Add(dniFletero);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btn_Salir);
+            Controls.Add(btn_Confirma);
             Controls.Add(guiasAsociadas);
-            Controls.Add(listView1);
-            Margin = new Padding(2);
+            Controls.Add(listView_HDR);
+            Margin = new Padding(2, 3, 2, 3);
             Name = "RecepcionHDRAgencia";
             Text = "Recepción de Hojas de Ruta (Agencia)";
             ResumeLayout(false);
@@ -145,12 +148,12 @@
         }
 
         #endregion
-        private ListView listView1;
+        private ListView listView_HDR;
         private ColumnHeader numGuia;
         private ColumnHeader direccion;
         private Label guiasAsociadas;
-        private Button button1;
-        private Button button2;
+        private Button btn_Confirma;
+        private Button btn_Salir;
         private TextBox dniFleteroTXT;
         private Button buscarFletero;
         private Label dniFletero;
