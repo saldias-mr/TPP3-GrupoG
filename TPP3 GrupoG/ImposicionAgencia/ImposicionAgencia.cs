@@ -21,14 +21,44 @@ namespace TPP3_GrupoG.ImposicionAgencia
 
         private void ImposicionAgencia_Load(object sender, EventArgs e)
         {
-
+            // Carga limpia del ComboBox de TipoPaquete
             List<TipoPaquete> paquetes = modelo.ObtenerPaquetes();
-            CBTipoPaquete.Items.Clear();
-            CBTipoPaquete.Items.AddRange(paquetes);
-            CBTipoPaquete.DataSource = paquetes;        // <--- Asigna la lista como origen de datos
-            CBTipoPaquete.DisplayMember = "Nombre";      // <--- Muestra la propiedad 'Nombre' al usuario
-            CBTipoPaquete.ValueMember = "Id";            // <--- Guarda internamente el 'Id'
-            //CBTipoPaquete.SelectedIndex = 0;             // <--- Selecciona el primer ítem por defecto
+            if (paquetes != null && paquetes.Count > 0)
+            {
+                // Configurar el ComboBox para que aparezca vacío al inicio
+                CBTipoPaquete.DropDownStyle = ComboBoxStyle.DropDown;
+                CBTipoPaquete.DataSource = paquetes;
+                CBTipoPaquete.DisplayMember = "Nombre";
+                CBTipoPaquete.ValueMember = "Id";
+
+                // Forzar el ComboBox a estar vacío
+                CBTipoPaquete.Text = "";
+                CBTipoPaquete.SelectedIndex = -1;
+            }
+
+            List<Localidad> localidades = modelo.ObtenerLocalidades();
+            if (localidades != null && localidades.Count > 0)
+            {
+               
+                CBLocalidad.DataSource = localidades;
+                CBLocalidad.DisplayMember = "Nombre";
+                CBLocalidad.ValueMember = "Id";
+                CBLocalidad.SelectedIndex = -1; //para que aparezca vacío al inicio
+
+            }
+
+            List<Provincia> provincias = modelo.ObtenerProvincias();
+            if (provincias != null && provincias.Count > 0)
+            {
+                // Opción 1: ComboBox aparece vacío al inicio (sin texto visible)
+                CBProvincia.DropDownStyle = ComboBoxStyle.DropDown; // Permite Text = ""
+                CBProvincia.DataSource = provincias;
+                CBProvincia.DisplayMember = "Nombre";
+                CBProvincia.ValueMember = "Id";
+                CBProvincia.Text = ""; // Forzar vacío
+                CBProvincia.SelectedIndex = -1; // Sin selección
+            }
+
 
         }
 
@@ -76,24 +106,17 @@ namespace TPP3_GrupoG.ImposicionAgencia
 
         private void CBTipoPaquete_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Verifica que haya un ítem seleccionado
-            if (CBTipoPaquete.SelectedIndex != -1)
-            {
+            // Evitar ejecutar lógica si no hay selección válida
+            if (CBTipoPaquete.SelectedIndex == -1 || CBTipoPaquete.SelectedItem == null)
+                return;
 
+            var paqueteSeleccionado = CBTipoPaquete.SelectedItem as TipoPaquete;
+            if (paqueteSeleccionado == null)
+                return; // SelectedItem no es un TipoPaquete válido
 
-            }
+            int idSeleccionado = paqueteSeleccionado.Id;
+            string nombreSeleccionado = paqueteSeleccionado.Nombre;
 
-            // 1. Obtén el objeto TipoPaquete seleccionado
-            var paqueteSeleccionado = (TipoPaquete)CBTipoPaquete.SelectedItem;
-            var paquetes = paqueteSeleccionado.Id;
-            //int idSeleccionado = paqueteSeleccionado.Id;
-            //string nombreSeleccionado = paqueteSeleccionado.Nombre;
-
-            CBTipoPaquete.DataSource = null;        // Limpia el origen de datos para evitar problemas
-            CBTipoPaquete.DisplayMember = "Nombre";
-            CBTipoPaquete.ValueMember = "Id";
-            CBTipoPaquete.Items.Clear();
-            CBTipoPaquete.Items.AddRange(paquetes);
 
         }
 

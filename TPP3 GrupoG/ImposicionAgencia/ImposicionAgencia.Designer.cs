@@ -35,12 +35,12 @@
             label9 = new Label();
             label8 = new Label();
             provinciaLBL = new Label();
-            comboBox2 = new ComboBox();
+            CBLocalidad = new ComboBox();
             Rdb_domicilio = new RadioButton();
             labelProvinciaCliente = new Label();
             label5 = new Label();
             pronviciaCliente = new Label();
-            comboBox3 = new ComboBox();
+            CBProvincia = new ComboBox();
             localidadLBL = new Label();
             CBTipoEntrega = new ComboBox();
             Agencia = new Label();
@@ -147,13 +147,13 @@
             provinciaLBL.TabIndex = 128;
             provinciaLBL.Text = "Provincia";
             // 
-            // comboBox2
+            // CBLocalidad
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(320, 381);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(232, 23);
-            comboBox2.TabIndex = 127;
+            CBLocalidad.FormattingEnabled = true;
+            CBLocalidad.Location = new Point(320, 381);
+            CBLocalidad.Name = "CBLocalidad";
+            CBLocalidad.Size = new Size(232, 23);
+            CBLocalidad.TabIndex = 127;
             // 
             // Rdb_domicilio
             // 
@@ -197,13 +197,13 @@
             pronviciaCliente.TabIndex = 123;
             pronviciaCliente.Text = "Provincia";
             // 
-            // comboBox3
+            // CBProvincia
             // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(320, 330);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(232, 23);
-            comboBox3.TabIndex = 122;
+            CBProvincia.FormattingEnabled = true;
+            CBProvincia.Location = new Point(320, 330);
+            CBProvincia.Name = "CBProvincia";
+            CBProvincia.Size = new Size(232, 23);
+            CBProvincia.TabIndex = 122;
             // 
             // localidadLBL
             // 
@@ -565,12 +565,12 @@
             Controls.Add(label9);
             Controls.Add(label8);
             Controls.Add(provinciaLBL);
-            Controls.Add(comboBox2);
+            Controls.Add(CBLocalidad);
             Controls.Add(Rdb_domicilio);
             Controls.Add(labelProvinciaCliente);
             Controls.Add(label5);
             Controls.Add(pronviciaCliente);
-            Controls.Add(comboBox3);
+            Controls.Add(CBProvincia);
             Controls.Add(localidadLBL);
             Controls.Add(CBTipoEntrega);
             Controls.Add(Agencia);
@@ -609,6 +609,7 @@
             Controls.Add(label1);
             Name = "ImposicionAgencia";
             Text = "Imposición en Agencia";
+            Load += ImposicionAgencia_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -627,12 +628,12 @@
         private Label label9;
         private Label label8;
         private Label provinciaLBL;
-        private ComboBox comboBox2;
+        private ComboBox CBLocalidad;
         private RadioButton Rdb_domicilio;
         private Label labelProvinciaCliente;
         private Label label5;
         private Label pronviciaCliente;
-        private ComboBox comboBox3;
+        private ComboBox CBProvincia;
         private Label localidadLBL;
         private ComboBox CBTipoEntrega;
         private Label Agencia;
