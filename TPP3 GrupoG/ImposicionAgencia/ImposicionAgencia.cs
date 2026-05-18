@@ -95,11 +95,11 @@ namespace TPP3_GrupoG.ImposicionAgencia
                 // 2. Obtener la dirección completa desde los campos de texto
                 string direccionCompleta = $"{labelDireccionCliente.Text} {labelLocalidadCliente.Text} {labelProvinciaCliente.Text} {labelCPCliente.Text}";
 
-                // 3. Agregar la dirección como único ítem (y si quieres que aparezca seleccionada)
+                // 3. Agregar la dirección como único ítem (para que aparezca seleccionada)
                 CBTipoEntrega.Items.Add(direccionCompleta);
                 CBTipoEntrega.SelectedIndex = 0; // Para que quede seleccionada
 
-                // 4. Deshabilitar el ComboBox para que el usuario no pueda cambiarlo (opcional)
+                // 4. Deshabilitar el ComboBox para que el usuario no pueda cambiarlo
                 CBTipoEntrega.Enabled = false;
             }
 
@@ -180,7 +180,6 @@ namespace TPP3_GrupoG.ImposicionAgencia
             string telefonoDestinatario = TBDDTelefono.Text.Trim();
             string descripcionPaquete = TBDPDescripcion.Text.Trim();
             // 3. Obtener datos de los ComboBox (Provincia, Localidad, Tipo de Paquete)
-            // Asumo que el ComboBox de Provincia se llama 'cbProvinciaDestinatario' y el de Localidad 'cbLocalidadDestinatario'
             string provinciaDestinatario = CBProvincia.Text;
             string localidadDestinatario = CBLocalidad.Text;
             string tipoPaquete = CBTipoPaquete.Text; // Muestra el nombre del paquete seleccionado
@@ -190,7 +189,6 @@ namespace TPP3_GrupoG.ImposicionAgencia
             string dniRemitente = labelDNI.Text;
 
             // 5. Validar si el usuario seleccionó un lugar de entrega válido (Agencia, CD o Domicilio)
-            // El ComboBox CBTipoEntrega es el que se llena según los RadioButtons
             string lugarEntrega = CBTipoEntrega.Text;
             if (string.IsNullOrWhiteSpace(lugarEntrega) || lugarEntrega == "Seleccione una opción")
             {
@@ -202,7 +200,6 @@ namespace TPP3_GrupoG.ImposicionAgencia
             string numeroGuia = Guid.NewGuid().ToString("N").Substring(0, 10).ToUpper(); // Ejemplo: 4F7A9C2D1B
 
             // 7. Guardar la imposición (acá podrías llamar a un método del modelo para guardar en BD)
-            // Por ahora, simulamos el guardado con un mensaje.
             MessageBox.Show($"Imposición registrada exitosamente.\nNúmero de Guía: {numeroGuia}\n\nResumen:\nRemitente: {nombreRemitente}\nDestinatario: {nombreDestinatario}\nPaquete: {tipoPaquete}\nLugar de entrega: {lugarEntrega}\nDescripción: {descripcionPaquete}",
                             "Operación exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
