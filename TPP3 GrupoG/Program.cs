@@ -26,7 +26,8 @@ namespace TPP3_GrupoG
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new TPP3_GrupoG.ImposicionAgencia.ImposicionAgencia());
             //Application.Run(new TPP3_GrupoG.ImposicionCD.ImposicionCD());
-            Application.Run(new TPP3_GrupoG.ImposicionCallCenter.ImposicionCallCenter());
+            //Application.Run(new TPP3_GrupoG.ImposicionCallCenter.ImposicionCallCenter());
+            Application.Run(new TPP3_GrupoG.RendicionHDRUltimaMilla.Rendicion_de_HDR_Ultima_Milla());
             //Application.Run(new Tracking());
             //Application.Run(new EntregaAgencia());
             //Application.Run(new EntregaCD());
