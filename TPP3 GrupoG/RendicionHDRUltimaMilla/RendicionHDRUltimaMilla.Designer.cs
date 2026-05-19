@@ -216,6 +216,7 @@
             listViewGUIASaEntregar.Size = new Size(338, 162);
             listViewGUIASaEntregar.TabIndex = 18;
             listViewGUIASaEntregar.UseCompatibleStateImageBehavior = false;
+
             // 
             // Rendicion_de_HDR_Ultima_Milla
             // 

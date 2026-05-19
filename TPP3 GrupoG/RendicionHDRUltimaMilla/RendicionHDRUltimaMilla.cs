@@ -162,6 +162,7 @@ namespace TPP3_GrupoG.RendicionHDRUltimaMilla
             }
         }
 
+        //List View de abajo "HDR Pendiente de Rendición"
         private void hdrPendienteLIST_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (hdrPendienteLIST.SelectedItems.Count > 0)
@@ -245,5 +246,6 @@ namespace TPP3_GrupoG.RendicionHDRUltimaMilla
         private void guiaAsociada_Click(object sender, EventArgs e) { }
         private void resultadoCMB_SelectedIndexChanged(object sender, EventArgs e) { }
         private void listView1_SelectedIndexChanged(object sender, EventArgs e) { }
+
     }
 }
