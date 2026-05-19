@@ -24,11 +24,11 @@ namespace TPP3_GrupoG.RendicionHDRUltimaMilla
 
         private void Rendicion_de_HDR_Ultima_Milla_Load(object sender, EventArgs e)
         {
-            // 1. Cargar datos del modelo
+            // Cargar datos del modelo
             listaFleteros = modelo.ObtenerFleterosDePrueba();
             hdrPendientesGlobal = modelo.ObtenerHDRsPendientes();
 
-            // 2. (SEGURIDAD) Si el ListView nuevo no tiene columnas configuradas, las creamos aquí
+            // Si el ListView nuevo no tiene columnas configuradas, las creamos aquí
             if (listViewHDR.Columns.Count == 0)
             {
                 listViewHDR.View = View.Details;
@@ -37,13 +37,13 @@ namespace TPP3_GrupoG.RendicionHDRUltimaMilla
                 listViewHDR.Columns.Add("Dirección", 150);
             }
 
-            // 3. POBLAR LA LISTA SUPERIOR (HDRs a entregar al fletero)
+            // POBLAR LA LISTA SUPERIOR (HDRs a entregar al fletero)
             if (hdrPendientesGlobal != null && hdrPendientesGlobal.Count > 0)
             {
                 PoblarListaHDR(listViewHDR, hdrPendientesGlobal);
             }
 
-            // 4. Limpiar SOLO las listas inferiores (del fletero) para que arranquen vacías
+            // Limpiar SOLO las listas inferiores (del fletero) para que arranquen vacías
             hdrPendienteLIST.Items.Clear();
             guiaAsociadaLISTARendir.Items.Clear();
             listViewGUIASaEntregar.Items.Clear();
@@ -265,7 +265,7 @@ namespace TPP3_GrupoG.RendicionHDRUltimaMilla
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Este evento corresponde al ListView de arriba a la derecha ('listViewGUIASaEntregar').
-            // Si quieres que al seleccionar una guía aquí pase algo, puedes agregarlo.
+            // Sirve por si queremos que suceda algo con la guía seleccionada.
             // Por ahora lo dejamos vacío para que compile.
         }
 
