@@ -42,13 +42,10 @@
             resultadoCMB = new ComboBox();
             confirmarRendicion = new Button();
             emitirResumen = new Button();
-            listViewGUIASaEntregar = new ListView();
-            listViewHDR = new ListView();
-            columnHeader1 = new ColumnHeader();
-            columnHeader2 = new ColumnHeader();
-            columnHeader3 = new ColumnHeader();
             label1 = new Label();
             label2 = new Label();
+            listViewHDR = new ListView();
+            listViewGUIASaEntregar = new ListView();
             SuspendLayout();
             // 
             // dniFletero
@@ -183,48 +180,6 @@
             emitirResumen.Text = "Emitir resumen";
             emitirResumen.UseVisualStyleBackColor = true;
             // 
-            // listViewGUIASaEntregar
-            // 
-            listViewGUIASaEntregar.FullRowSelect = true;
-            listViewGUIASaEntregar.Location = new Point(453, 69);
-            listViewGUIASaEntregar.Margin = new Padding(2);
-            listViewGUIASaEntregar.MultiSelect = false;
-            listViewGUIASaEntregar.Name = "listViewGUIASaEntregar";
-            listViewGUIASaEntregar.Size = new Size(340, 155);
-            listViewGUIASaEntregar.TabIndex = 15;
-            listViewGUIASaEntregar.UseCompatibleStateImageBehavior = false;
-            listViewGUIASaEntregar.View = View.Details;
-            listViewGUIASaEntregar.SelectedIndexChanged += listView1_SelectedIndexChanged;
-            // 
-            // listViewHDR
-            // 
-            listViewHDR.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3 });
-            listViewHDR.FullRowSelect = true;
-            listViewHDR.Location = new Point(22, 69);
-            listViewHDR.Margin = new Padding(2);
-            listViewHDR.MultiSelect = false;
-            listViewHDR.Name = "listViewHDR";
-            listViewHDR.Size = new Size(427, 155);
-            listViewHDR.TabIndex = 14;
-            listViewHDR.UseCompatibleStateImageBehavior = false;
-            listViewHDR.View = View.Details;
-            listViewHDR.SelectedIndexChanged += listViewHDR_SelectedIndexChanged_1;
-            // 
-            // columnHeader1
-            // 
-            columnHeader1.Text = "Nº HDR";
-            columnHeader1.Width = 90;
-            // 
-            // columnHeader2
-            // 
-            columnHeader2.Text = "Tipo";
-            columnHeader2.Width = 90;
-            // 
-            // columnHeader3
-            // 
-            columnHeader3.Text = "Dirección";
-            columnHeader3.Width = 90;
-            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -245,14 +200,31 @@
             label2.TabIndex = 16;
             label2.Text = "Guías";
             // 
+            // listViewHDR
+            // 
+            listViewHDR.Location = new Point(22, 68);
+            listViewHDR.Name = "listViewHDR";
+            listViewHDR.Size = new Size(427, 162);
+            listViewHDR.TabIndex = 17;
+            listViewHDR.UseCompatibleStateImageBehavior = false;
+            listViewHDR.SelectedIndexChanged += listViewHDR_SelectedIndexChanged;
+            // 
+            // listViewGUIASaEntregar
+            // 
+            listViewGUIASaEntregar.Location = new Point(455, 68);
+            listViewGUIASaEntregar.Name = "listViewGUIASaEntregar";
+            listViewGUIASaEntregar.Size = new Size(338, 162);
+            listViewGUIASaEntregar.TabIndex = 18;
+            listViewGUIASaEntregar.UseCompatibleStateImageBehavior = false;
+            // 
             // Rendicion_de_HDR_Ultima_Milla
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(822, 558);
-            Controls.Add(label2);
             Controls.Add(listViewGUIASaEntregar);
             Controls.Add(listViewHDR);
+            Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(emitirResumen);
             Controls.Add(confirmarRendicion);
@@ -288,12 +260,9 @@
         private ComboBox resultadoCMB;
         private Button confirmarRendicion;
         private Button emitirResumen;
-        private ListView listViewGUIASaEntregar;
-        private ListView listViewHDR;
-        private ColumnHeader columnHeader1;
-        private ColumnHeader columnHeader2;
-        private ColumnHeader columnHeader3;
         private Label label1;
         private Label label2;
+        private ListView listViewHDR;
+        private ListView listViewGUIASaEntregar;
     }
 }
