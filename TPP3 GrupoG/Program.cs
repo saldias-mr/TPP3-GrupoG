@@ -1,28 +1,36 @@
 using System;
 using System.Windows.Forms;
+using TPP3_GrupoG.ImposicionAgencia;
+using TPP3_GrupoG.ImposicionCD;
 using TPP3_GrupoG.ConsultaEstado;
+using TPP3_GrupoG.HojadeRutaUM;
 using TPP3_GrupoG.Entregas;
-using TPP3_GrupoG.RecepcionHDRAgencia;
+
+
 
 namespace TPP3_GrupoG
 {
     internal static class Program
     {
         /// <summary>
-        ///  The main entry point for the application.
+        /// Punto de entrada principal de la aplicación.
         /// </summary>
         [STAThread]
         static void Main()
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
-            //ApplicationConfiguration.Initialize();
+
+            ApplicationConfiguration.Initialize();
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new TPP3_GrupoG.ImposicionAgencia.ImposicionAgencia());
+            //Application.Run(new TPP3_GrupoG.ImposicionCD.ImposicionCD());
+            Application.Run(new TPP3_GrupoG.ImposicionCallCenter.ImposicionCallCenter());
             //Application.Run(new Tracking());
             //Application.Run(new EntregaAgencia());
             //Application.Run(new EntregaCD());
-            //Application.Run(new RecepcionHDRAgencia ());
-            //Application.Run(new TPP3_GrupoG.RecepcionHDRAgencia.RecepcionHDRAgencia());
-            Application.Run(new TPP3_GrupoG.RendicionHDRUltimaMilla.Rendicion_de_HDR_Ultima_Milla());
+
         }
     }
 }

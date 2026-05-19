@@ -1,4 +1,4 @@
-﻿namespace TPP3_GrupoG.HDRUltimaMilla
+﻿namespace TPP3_GrupoG.HojadeRutaUM
 {
     partial class HDRUltimaMilla
     {
@@ -30,33 +30,33 @@
         {
             tutsasa = new Label();
             HDRUltimaMillaTitulo = new Label();
-            FleterosDisponibles = new ComboBox();
+            FleteroCMB = new ComboBox();
             Fletero = new Label();
-            EstadoGuias = new ListView();
+            HdrLIST1 = new ListView();
             NdeGuía = new ColumnHeader();
             TiempoSinAsignar = new ColumnHeader();
-            Dirección = new ColumnHeader();
+            Direccion = new ColumnHeader();
             Tipopaquete = new ColumnHeader();
             detalleHDR = new Label();
             tipodeservicio = new Label();
-            Retiro = new CheckBox();
-            Distribucion = new CheckBox();
-            GenerarHDR = new Button();
-            listView1 = new ListView();
-            columnHeader1 = new ColumnHeader();
-            columnHeader2 = new ColumnHeader();
-            columnHeader3 = new ColumnHeader();
-            columnHeader4 = new ColumnHeader();
-            button1 = new Button();
-            button4 = new Button();
-            button5 = new Button();
-            button6 = new Button();
+            retiroCheck = new CheckBox();
+            distribucionCheck = new CheckBox();
+            generarHdrBTN = new Button();
+            HdrLIST2 = new ListView();
+            NdGuia1 = new ColumnHeader();
+            TiempoSinAsignar1 = new ColumnHeader();
+            Direccion1 = new ColumnHeader();
+            Tipopaquete1 = new ColumnHeader();
+            agregarHdrBTN = new Button();
+            quitarHdrBTN = new Button();
+            agregarAllBTN = new Button();
+            quitarAllBTN = new Button();
             groupBox1 = new GroupBox();
-            dateTimePicker2 = new DateTimePicker();
-            dateTimePicker1 = new DateTimePicker();
-            button7 = new Button();
+            fechaHasta = new DateTimePicker();
+            fechaDesde = new DateTimePicker();
+            buscarCuitBTN = new Button();
             label2 = new Label();
-            textBox2 = new TextBox();
+            CuitTXT = new TextBox();
             label1 = new Label();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -65,64 +65,65 @@
             // 
             tutsasa.AutoSize = true;
             tutsasa.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            tutsasa.Location = new Point(22, 9);
+            tutsasa.Location = new Point(41, 9);
             tutsasa.Name = "tutsasa";
-            tutsasa.Size = new Size(102, 21);
+            tutsasa.Size = new Size(129, 28);
             tutsasa.TabIndex = 0;
             tutsasa.Text = "TUTASA S.A.";
             // 
             // HDRUltimaMillaTitulo
             // 
             HDRUltimaMillaTitulo.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            HDRUltimaMillaTitulo.Location = new Point(303, 9);
-            HDRUltimaMillaTitulo.MaximumSize = new Size(500, 500);
+            HDRUltimaMillaTitulo.Location = new Point(531, 12);
+            HDRUltimaMillaTitulo.MaximumSize = new Size(571, 667);
             HDRUltimaMillaTitulo.Name = "HDRUltimaMillaTitulo";
-            HDRUltimaMillaTitulo.Size = new Size(398, 35);
+            HDRUltimaMillaTitulo.Size = new Size(455, 47);
             HDRUltimaMillaTitulo.TabIndex = 1;
             HDRUltimaMillaTitulo.Text = "HDR Última Milla";
             // 
-            // FleterosDisponibles
+            // FleteroCMB
             // 
-            FleterosDisponibles.FormattingEnabled = true;
-            FleterosDisponibles.Location = new Point(22, 66);
-            FleterosDisponibles.Name = "FleterosDisponibles";
-            FleterosDisponibles.Size = new Size(314, 23);
-            FleterosDisponibles.TabIndex = 2;
+            FleteroCMB.FormattingEnabled = true;
+            FleteroCMB.Location = new Point(41, 88);
+            FleteroCMB.Margin = new Padding(3, 4, 3, 4);
+            FleteroCMB.Name = "FleteroCMB";
+            FleteroCMB.Size = new Size(358, 28);
+            FleteroCMB.TabIndex = 2;
             // 
             // Fletero
             // 
             Fletero.AutoSize = true;
-            Fletero.Location = new Point(22, 48);
+            Fletero.Location = new Point(41, 64);
             Fletero.Name = "Fletero";
-            Fletero.Size = new Size(48, 15);
+            Fletero.Size = new Size(61, 20);
             Fletero.TabIndex = 3;
             Fletero.Text = "Fleteros";
             // 
-            // EstadoGuias
+            // HdrLIST1
             // 
-            EstadoGuias.Columns.AddRange(new ColumnHeader[] { NdeGuía, TiempoSinAsignar, Dirección, Tipopaquete });
-            EstadoGuias.Location = new Point(36, 298);
-            EstadoGuias.Name = "EstadoGuias";
-            EstadoGuias.Size = new Size(423, 227);
-            EstadoGuias.TabIndex = 6;
-            EstadoGuias.UseCompatibleStateImageBehavior = false;
-            EstadoGuias.View = View.Details;
-            EstadoGuias.SelectedIndexChanged += EstadoGuias_SelectedIndexChanged;
+            HdrLIST1.Columns.AddRange(new ColumnHeader[] { NdeGuía, TiempoSinAsignar, Direccion, Tipopaquete });
+            HdrLIST1.Location = new Point(41, 397);
+            HdrLIST1.Margin = new Padding(3, 4, 3, 4);
+            HdrLIST1.Name = "HdrLIST1";
+            HdrLIST1.Size = new Size(483, 301);
+            HdrLIST1.TabIndex = 6;
+            HdrLIST1.UseCompatibleStateImageBehavior = false;
+            HdrLIST1.View = View.Details;
             // 
             // NdeGuía
             // 
             NdeGuía.Text = "N °de Guía";
-            NdeGuía.Width = 120;
+            NdeGuía.Width = 100;
             // 
             // TiempoSinAsignar
             // 
             TiempoSinAsignar.Text = "Tiempo Sin Asignación";
-            TiempoSinAsignar.Width = 200;
+            TiempoSinAsignar.Width = 165;
             // 
-            // Dirección
+            // Direccion
             // 
-            Dirección.Text = "Dirección";
-            Dirección.Width = 100;
+            Direccion.Text = "Dirección";
+            Direccion.Width = 100;
             // 
             // Tipopaquete
             // 
@@ -132,9 +133,9 @@
             // detalleHDR
             // 
             detalleHDR.AutoSize = true;
-            detalleHDR.Location = new Point(36, 280);
+            detalleHDR.Location = new Point(41, 373);
             detalleHDR.Name = "detalleHDR";
-            detalleHDR.Size = new Size(70, 15);
+            detalleHDR.Size = new Size(92, 20);
             detalleHDR.TabIndex = 7;
             detalleHDR.Text = "Detalle HDR";
             // 
@@ -143,198 +144,216 @@
             tipodeservicio.AutoSize = true;
             tipodeservicio.Enabled = false;
             tipodeservicio.ImageAlign = ContentAlignment.TopCenter;
-            tipodeservicio.Location = new Point(11, 19);
+            tipodeservicio.Location = new Point(13, 25);
             tipodeservicio.Name = "tipodeservicio";
-            tipodeservicio.Size = new Size(91, 15);
+            tipodeservicio.Size = new Size(116, 20);
             tipodeservicio.TabIndex = 11;
             tipodeservicio.Text = "Tipo de Servicio";
             // 
-            // Retiro
+            // retiroCheck
             // 
-            Retiro.AutoSize = true;
-            Retiro.Location = new Point(11, 37);
-            Retiro.Name = "Retiro";
-            Retiro.Size = new Size(57, 19);
-            Retiro.TabIndex = 12;
-            Retiro.Text = "Retiro";
-            Retiro.UseVisualStyleBackColor = true;
+            retiroCheck.AutoSize = true;
+            retiroCheck.Location = new Point(13, 49);
+            retiroCheck.Margin = new Padding(3, 4, 3, 4);
+            retiroCheck.Name = "retiroCheck";
+            retiroCheck.Size = new Size(71, 24);
+            retiroCheck.TabIndex = 12;
+            retiroCheck.Text = "Retiro";
+            retiroCheck.UseVisualStyleBackColor = true;
             // 
-            // Distribucion
+            // distribucionCheck
             // 
-            Distribucion.AutoSize = true;
-            Distribucion.Location = new Point(74, 37);
-            Distribucion.Name = "Distribucion";
-            Distribucion.Size = new Size(90, 19);
-            Distribucion.TabIndex = 13;
-            Distribucion.Text = "Distribución";
-            Distribucion.UseVisualStyleBackColor = true;
+            distribucionCheck.AutoSize = true;
+            distribucionCheck.Location = new Point(85, 49);
+            distribucionCheck.Margin = new Padding(3, 4, 3, 4);
+            distribucionCheck.Name = "distribucionCheck";
+            distribucionCheck.Size = new Size(111, 24);
+            distribucionCheck.TabIndex = 13;
+            distribucionCheck.Text = "Distribución";
+            distribucionCheck.UseVisualStyleBackColor = true;
             // 
-            // GenerarHDR
+            // generarHdrBTN
             // 
-            GenerarHDR.Location = new Point(929, 541);
-            GenerarHDR.Name = "GenerarHDR";
-            GenerarHDR.Size = new Size(126, 23);
-            GenerarHDR.TabIndex = 14;
-            GenerarHDR.Text = "Generar HDR";
-            GenerarHDR.UseVisualStyleBackColor = true;
-            GenerarHDR.Click += button1_Click;
+            generarHdrBTN.Location = new Point(1092, 723);
+            generarHdrBTN.Margin = new Padding(3, 4, 3, 4);
+            generarHdrBTN.Name = "generarHdrBTN";
+            generarHdrBTN.Size = new Size(144, 31);
+            generarHdrBTN.TabIndex = 14;
+            generarHdrBTN.Text = "Generar HDR";
+            generarHdrBTN.UseVisualStyleBackColor = true;
+            generarHdrBTN.Click += generarHdrBTN_Click;
             // 
-            // listView1
+            // HdrLIST2
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4 });
-            listView1.Location = new Point(660, 298);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(396, 227);
-            listView1.TabIndex = 15;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
+            HdrLIST2.Columns.AddRange(new ColumnHeader[] { NdGuia1, TiempoSinAsignar1, Direccion1, Tipopaquete1 });
+            HdrLIST2.Location = new Point(754, 397);
+            HdrLIST2.Margin = new Padding(3, 4, 3, 4);
+            HdrLIST2.Name = "HdrLIST2";
+            HdrLIST2.Size = new Size(483, 301);
+            HdrLIST2.TabIndex = 15;
+            HdrLIST2.UseCompatibleStateImageBehavior = false;
+            HdrLIST2.View = View.Details;
             // 
-            // columnHeader1
+            // NdGuia1
             // 
-            columnHeader1.Text = "N °de Guía";
-            columnHeader1.Width = 120;
+            NdGuia1.Text = "N °de Guía";
+            NdGuia1.Width = 100;
             // 
-            // columnHeader2
+            // TiempoSinAsignar1
             // 
-            columnHeader2.Text = "Tiempo Sin Asignación";
-            columnHeader2.Width = 200;
+            TiempoSinAsignar1.Text = "Tiempo Sin Asignación";
+            TiempoSinAsignar1.Width = 165;
             // 
-            // columnHeader3
+            // Direccion1
             // 
-            columnHeader3.Text = "Dirección";
-            columnHeader3.Width = 100;
+            Direccion1.Text = "Dirección";
+            Direccion1.Width = 100;
             // 
-            // columnHeader4
+            // Tipopaquete1
             // 
-            columnHeader4.Text = "Tipo de Paquete";
-            columnHeader4.Width = 150;
+            Tipopaquete1.Text = "Tipo de Paquete";
+            Tipopaquete1.Width = 150;
             // 
-            // button1
+            // agregarHdrBTN
             // 
-            button1.Location = new Point(465, 357);
-            button1.Name = "button1";
-            button1.Size = new Size(189, 23);
-            button1.TabIndex = 16;
-            button1.Text = "Agregar >>>";
-            button1.UseVisualStyleBackColor = true;
+            agregarHdrBTN.Location = new Point(531, 476);
+            agregarHdrBTN.Margin = new Padding(3, 4, 3, 4);
+            agregarHdrBTN.Name = "agregarHdrBTN";
+            agregarHdrBTN.Size = new Size(216, 31);
+            agregarHdrBTN.TabIndex = 16;
+            agregarHdrBTN.Text = "Agregar >>>";
+            agregarHdrBTN.UseVisualStyleBackColor = true;
+            agregarHdrBTN.Click += agregarHdrBTN_Click;
             // 
-            // button4
+            // quitarHdrBTN
             // 
-            button4.Location = new Point(465, 424);
-            button4.Name = "button4";
-            button4.Size = new Size(189, 23);
-            button4.TabIndex = 17;
-            button4.Text = "<<< Quitar";
-            button4.UseVisualStyleBackColor = true;
+            quitarHdrBTN.Location = new Point(531, 565);
+            quitarHdrBTN.Margin = new Padding(3, 4, 3, 4);
+            quitarHdrBTN.Name = "quitarHdrBTN";
+            quitarHdrBTN.Size = new Size(216, 31);
+            quitarHdrBTN.TabIndex = 17;
+            quitarHdrBTN.Text = "<<< Quitar";
+            quitarHdrBTN.UseVisualStyleBackColor = true;
+            quitarHdrBTN.Click += quitarHdrBTN_Click;
             // 
-            // button5
+            // agregarAllBTN
             // 
-            button5.Location = new Point(465, 395);
-            button5.Name = "button5";
-            button5.Size = new Size(189, 23);
-            button5.TabIndex = 18;
-            button5.Text = "Agregar todos >>>";
-            button5.UseVisualStyleBackColor = true;
+            agregarAllBTN.Location = new Point(532, 515);
+            agregarAllBTN.Margin = new Padding(3, 4, 3, 4);
+            agregarAllBTN.Name = "agregarAllBTN";
+            agregarAllBTN.Size = new Size(216, 31);
+            agregarAllBTN.TabIndex = 18;
+            agregarAllBTN.Text = "Agregar todos >>>";
+            agregarAllBTN.UseVisualStyleBackColor = true;
+            agregarAllBTN.Click += agregarAllBTN_Click;
             // 
-            // button6
+            // quitarAllBTN
             // 
-            button6.Location = new Point(465, 453);
-            button6.Name = "button6";
-            button6.Size = new Size(189, 23);
-            button6.TabIndex = 19;
-            button6.Text = "<<< Quitar todos";
-            button6.UseVisualStyleBackColor = true;
+            quitarAllBTN.Location = new Point(531, 604);
+            quitarAllBTN.Margin = new Padding(3, 4, 3, 4);
+            quitarAllBTN.Name = "quitarAllBTN";
+            quitarAllBTN.Size = new Size(216, 31);
+            quitarAllBTN.TabIndex = 19;
+            quitarAllBTN.Text = "<<< Quitar todos";
+            quitarAllBTN.UseVisualStyleBackColor = true;
+            quitarAllBTN.Click += quitarAllBTN_Click;
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(dateTimePicker2);
-            groupBox1.Controls.Add(dateTimePicker1);
-            groupBox1.Controls.Add(button7);
+            groupBox1.Controls.Add(fechaHasta);
+            groupBox1.Controls.Add(fechaDesde);
+            groupBox1.Controls.Add(buscarCuitBTN);
             groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(textBox2);
+            groupBox1.Controls.Add(CuitTXT);
             groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(Distribucion);
+            groupBox1.Controls.Add(distribucionCheck);
             groupBox1.Controls.Add(tipodeservicio);
-            groupBox1.Controls.Add(Retiro);
-            groupBox1.Location = new Point(36, 166);
+            groupBox1.Controls.Add(retiroCheck);
+            groupBox1.Location = new Point(41, 221);
+            groupBox1.Margin = new Padding(3, 4, 3, 4);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(575, 100);
+            groupBox1.Padding = new Padding(3, 4, 3, 4);
+            groupBox1.Size = new Size(683, 133);
             groupBox1.TabIndex = 20;
             groupBox1.TabStop = false;
             groupBox1.Text = "Filtrar";
             // 
-            // dateTimePicker2
+            // fechaHasta
             // 
-            dateTimePicker2.Location = new Point(194, 62);
-            dateTimePicker2.Margin = new Padding(2, 2, 2, 2);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(211, 23);
-            dateTimePicker2.TabIndex = 23;
+            fechaHasta.Location = new Point(222, 83);
+            fechaHasta.Margin = new Padding(2, 3, 2, 3);
+            fechaHasta.Name = "fechaHasta";
+            fechaHasta.Size = new Size(268, 27);
+            fechaHasta.TabIndex = 23;
             // 
-            // dateTimePicker1
+            // fechaDesde
             // 
-            dateTimePicker1.Location = new Point(194, 40);
-            dateTimePicker1.Margin = new Padding(2, 2, 2, 2);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(211, 23);
-            dateTimePicker1.TabIndex = 22;
+            fechaDesde.Location = new Point(222, 53);
+            fechaDesde.Margin = new Padding(2, 3, 2, 3);
+            fechaDesde.Name = "fechaDesde";
+            fechaDesde.Size = new Size(268, 27);
+            fechaDesde.TabIndex = 22;
             // 
-            // button7
+            // buscarCuitBTN
             // 
-            button7.Location = new Point(429, 66);
-            button7.Name = "button7";
-            button7.Size = new Size(126, 23);
-            button7.TabIndex = 21;
-            button7.Text = "Buscar";
-            button7.UseVisualStyleBackColor = true;
+            buscarCuitBTN.Location = new Point(522, 94);
+            buscarCuitBTN.Margin = new Padding(3, 4, 3, 4);
+            buscarCuitBTN.Name = "buscarCuitBTN";
+            buscarCuitBTN.Size = new Size(144, 31);
+            buscarCuitBTN.TabIndex = 21;
+            buscarCuitBTN.Text = "Buscar";
+            buscarCuitBTN.UseVisualStyleBackColor = true;
+            buscarCuitBTN.Click += buscarCuitBTN_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Enabled = false;
             label2.ImageAlign = ContentAlignment.TopCenter;
-            label2.Location = new Point(429, 19);
+            label2.Location = new Point(522, 25);
             label2.Name = "label2";
-            label2.Size = new Size(81, 15);
+            label2.Size = new Size(100, 20);
             label2.TabIndex = 17;
             label2.Text = "Cliente (CUIT)";
             // 
-            // textBox2
+            // CuitTXT
             // 
-            textBox2.Location = new Point(429, 41);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 16;
+            CuitTXT.Location = new Point(522, 59);
+            CuitTXT.Margin = new Padding(3, 4, 3, 4);
+            CuitTXT.Name = "CuitTXT";
+            CuitTXT.Size = new Size(114, 27);
+            CuitTXT.TabIndex = 16;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Enabled = false;
             label1.ImageAlign = ContentAlignment.TopCenter;
-            label1.Location = new Point(194, 18);
+            label1.Location = new Point(222, 24);
             label1.Name = "label1";
-            label1.Size = new Size(113, 15);
+            label1.Size = new Size(142, 20);
             label1.TabIndex = 15;
             label1.Text = "Fecha (desde/hasta)";
             // 
             // HDRUltimaMilla
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1074, 630);
+            ClientSize = new Size(1248, 840);
             Controls.Add(groupBox1);
-            Controls.Add(button6);
-            Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(button1);
-            Controls.Add(listView1);
-            Controls.Add(GenerarHDR);
+            Controls.Add(quitarAllBTN);
+            Controls.Add(agregarAllBTN);
+            Controls.Add(quitarHdrBTN);
+            Controls.Add(agregarHdrBTN);
+            Controls.Add(HdrLIST2);
+            Controls.Add(generarHdrBTN);
             Controls.Add(detalleHDR);
-            Controls.Add(EstadoGuias);
+            Controls.Add(HdrLIST1);
             Controls.Add(Fletero);
-            Controls.Add(FleterosDisponibles);
+            Controls.Add(FleteroCMB);
             Controls.Add(HDRUltimaMillaTitulo);
             Controls.Add(tutsasa);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "HDRUltimaMilla";
             Text = "HDR Ultima Milla";
             Load += HDRUltimaMilla_Load;
@@ -348,33 +367,33 @@
 
         private Label tutsasa;
         private Label HDRUltimaMillaTitulo;
-        private ComboBox FleterosDisponibles;
+        private ComboBox FleteroCMB;
         private Label Fletero;
-        private ListView EstadoGuias;
+        private ListView HdrLIST1;
         private ColumnHeader NdeGuía;
         private Label detalleHDR;
         private Label tipodeservicio;
-        private CheckBox Retiro;
-        private CheckBox Distribucion;
+        private CheckBox retiroCheck;
+        private CheckBox distribucionCheck;
         private ColumnHeader TiempoSinAsignar;
-        private ColumnHeader Dirección;
+        private ColumnHeader Direccion;
         private ColumnHeader Tipopaquete;
-        private Button GenerarHDR;
-        private ListView listView1;
-        private ColumnHeader columnHeader1;
-        private ColumnHeader columnHeader2;
-        private ColumnHeader columnHeader3;
-        private ColumnHeader columnHeader4;
-        private Button button1;
-        private Button button4;
-        private Button button5;
-        private Button button6;
+        private Button generarHdrBTN;
+        private ListView HdrLIST2;
+        private ColumnHeader NdGuia1;
+        private ColumnHeader TiempoSinAsignar1;
+        private ColumnHeader Direccion1;
+        private ColumnHeader Tipopaquete1;
+        private Button agregarHdrBTN;
+        private Button quitarHdrBTN;
+        private Button agregarAllBTN;
+        private Button quitarAllBTN;
         private GroupBox groupBox1;
-        private Button button7;
         private Label label2;
-        private TextBox textBox2;
+        private TextBox CuitTXT;
         private Label label1;
-        private DateTimePicker dateTimePicker2;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker fechaHasta;
+        private DateTimePicker fechaDesde;
+        private Button buscarCuitBTN;
     }
 }
