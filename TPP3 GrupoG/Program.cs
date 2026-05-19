@@ -21,7 +21,8 @@ namespace TPP3_GrupoG
             //Application.Run(new EntregaAgencia());
             //Application.Run(new EntregaCD());
             //Application.Run(new RecepcionHDRAgencia ());
-            Application.Run(new TPP3_GrupoG.RecepcionHDRAgencia.RecepcionHDRAgencia());
+            //Application.Run(new TPP3_GrupoG.RecepcionHDRAgencia.RecepcionHDRAgencia());
+            Application.Run(new TPP3_GrupoG.RendicionHDRUltimaMilla.Rendicion_de_HDR_Ultima_Milla());
         }
     }
 }
