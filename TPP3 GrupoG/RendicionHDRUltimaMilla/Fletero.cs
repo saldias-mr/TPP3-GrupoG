@@ -13,7 +13,8 @@ namespace TPP3_GrupoG.RendicionHDRUltimaMilla
 
         public string DNI { get; set; }
         public string Nombre { get; set; }
-        public List<HDR> HDRsAsignadas { get; set; }
+        public List<HDR> HDRsDisponibles { get; set; } = new();
+        public List<HDR> HDRsAsignadas { get; set; } = new();
 
 
     }

@@ -8,7 +8,10 @@ namespace TPP3_GrupoG.RendicionHDRUltimaMilla
     {
 
         public int Id { get; set; }
-        public string NumeroGuia { get; set; }
-        
+        public string NumeroGuia { get; set; } = string.Empty;
+
+        // Resultado asignado durante la rendición
+        public string Resultado { get; set; } = string.Empty;
+
     }
 }

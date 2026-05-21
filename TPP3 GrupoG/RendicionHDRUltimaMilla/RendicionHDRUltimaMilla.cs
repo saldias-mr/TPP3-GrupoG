@@ -12,11 +12,13 @@ namespace TPP3_GrupoG.RendicionHDRUltimaMilla
         private List<Fletero> listaFleteros;
         private Fletero fleteroSeleccionado;
         private List<HDR> hdrPendientesGlobal;
+        private List<HDR> hdrRendidas = new();
 
         public Rendicion_de_HDR_Ultima_Milla()
         {
             InitializeComponent();
             InicializarControles();
+            Load += Rendicion_de_HDR_Ultima_Milla_Load;
         }
 
         private void InicializarControles()
@@ -59,12 +61,6 @@ namespace TPP3_GrupoG.RendicionHDRUltimaMilla
             listaFleteros = modelo.ObtenerFleterosDePrueba();
             hdrPendientesGlobal = modelo.ObtenerHDRsPendientes();
 
-            // POBLAR LA LISTA SUPERIOR
-            if (hdrPendientesGlobal != null && hdrPendientesGlobal.Count > 0)
-            {
-                PoblarListaHDR(listViewHDR, hdrPendientesGlobal);
-            }
-
             // Limpiar listas inferiores
             hdrPendienteLIST.Items.Clear();
             guiaAsociadaLISTARendir.Items.Clear();
@@ -97,14 +93,28 @@ namespace TPP3_GrupoG.RendicionHDRUltimaMilla
             listView.BeginUpdate();
             listView.Items.Clear();
 
+            // Configurar columnas según el ListView
+            listView.Columns.Clear();
+            listView.Columns.Add("N° Guía", 150);
+
+            // Si es la lista de rendición, agregar columna Resultado
+            if (listView == guiaAsociadaLISTARendir)
+                listView.Columns.Add("Resultado", 180);
+
             if (listaGuias != null && listaGuias.Count > 0)
             {
                 foreach (var guia in listaGuias)
                 {
-                    ListViewItem item = new ListViewItem(guia.NumeroGuia);
+                    var item = new ListViewItem(guia.NumeroGuia);
+                    item.Tag = guia;
+
+                    if (listView == guiaAsociadaLISTARendir)
+                        item.SubItems.Add(guia.Resultado);
+
                     listView.Items.Add(item);
                 }
             }
+
             listView.EndUpdate();
             listView.Refresh();
         }
@@ -139,11 +149,21 @@ namespace TPP3_GrupoG.RendicionHDRUltimaMilla
 
             if (fleteroSeleccionado != null)
             {
-                PoblarListaHDR(hdrPendienteLIST, fleteroSeleccionado.HDRsAsignadas);
+                // HDR para entregar
+                PoblarListaHDR(
+                    listViewHDR,
+                    fleteroSeleccionado.HDRsDisponibles);
+
+                // HDR pendientes de rendir
+                PoblarListaHDR(
+                    hdrPendienteLIST,
+                    fleteroSeleccionado.HDRsAsignadas);
             }
             else
             {
                 MessageBox.Show($"Fletero con DNI {dniBuscado} no encontrado.", "No encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                listViewHDR.Items.Clear();
+                hdrPendienteLIST.Items.Clear();
             }
         }
 
@@ -165,56 +185,117 @@ namespace TPP3_GrupoG.RendicionHDRUltimaMilla
         //List View de abajo "HDR Pendiente de Rendición"
         private void hdrPendienteLIST_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (hdrPendienteLIST.SelectedItems.Count > 0)
-            {
-                if (hdrPendienteLIST.SelectedItems[0].Tag is HDR hdrSeleccionada)
-                {
-                    // DEPURACIÓN: Si esto no aparece, el Tag no se está guardando correctamente
-                    // MessageBox.Show($"Seleccionaste: {hdrSeleccionada.NumeroHDR}. Guías: {hdrSeleccionada.Guias?.Count ?? 0}");
+            guiaAsociadaLISTARendir.Items.Clear();
+            resultadoCMB.Items.Clear();
 
-                    PoblarListaGuias(guiaAsociadaLISTARendir, hdrSeleccionada.Guias);
-                    confirmarRendicion.Enabled = true;
-                }
+            if (hdrPendienteLIST.SelectedItems.Count == 0)
+            {
+                confirmarRendicion.Enabled = false;
+                return;
+            }
+
+            var hdrSeleccionada =
+                hdrPendienteLIST.SelectedItems[0].Tag as HDR;
+
+            if (hdrSeleccionada == null)
+                return;
+
+            PoblarListaGuias(
+                guiaAsociadaLISTARendir,
+                hdrSeleccionada.Guias);
+
+            // RESULTADOS SEGÚN TIPO
+            if (hdrSeleccionada.Tipo == "Distribución")
+            {
+                resultadoCMB.Items.Add("Entregada");
+                resultadoCMB.Items.Add("No entregada");
             }
             else
             {
-                guiaAsociadaLISTARendir.Items.Clear();
-                confirmarRendicion.Enabled = false;
+                resultadoCMB.Items.Add("Retirada");
+                resultadoCMB.Items.Add("No retirada");
             }
+
+            resultadoCMB.Items.Add("Incidencia");
+
+            resultadoCMB.SelectedIndex = -1;
+
+            confirmarRendicion.Enabled = true;
         }
 
         private void confirmarRendicion_Click(object sender, EventArgs e)
         {
+            // Validar selección de HDR
             if (hdrPendienteLIST.SelectedItems.Count == 0)
             {
-                MessageBox.Show("Seleccione una HDR para confirmar.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(
+                    "Seleccione una HDR para confirmar.",
+                    "Validación",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
                 return;
             }
 
-            if (resultadoCMB.SelectedIndex == -1)
+            // Obtener HDR seleccionada
+            var hdrConfirmada = hdrPendienteLIST.SelectedItems[0].Tag as HDR;
+
+            if (hdrConfirmada == null)
+                return;
+
+            // Validar que todas las guías tengan resultado
+            bool faltanResultados = hdrConfirmada.Guias.Any(g =>
+                string.IsNullOrWhiteSpace(g.Resultado));
+
+            if (faltanResultados)
             {
-                MessageBox.Show("Seleccione un resultado para la HDR.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(
+                    "Por favor, revise las guías de la HDR a rendir antes de continuar.",
+                    "Validación",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
                 return;
             }
 
-            HDR hdrConfirmada = (HDR)hdrPendienteLIST.SelectedItems[0].Tag;
-            string resultadoSeleccionado = resultadoCMB.Text;
 
-            MessageBox.Show($"HDR {hdrConfirmada.NumeroHDR} confirmada con resultado: {resultadoSeleccionado}",
-                            "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // Procesar resultados
+            foreach (var guia in hdrConfirmada.Guias)
+            {
+                // Simulación del cambio de estado según el resultado
+                // guia.Estado = guia.Resultado;
+            }
 
-            if (fleteroSeleccionado != null && fleteroSeleccionado.HDRsAsignadas.Contains(hdrConfirmada))
+            // Registrar HDR como rendida
+            hdrRendidas.Add(hdrConfirmada);
+
+            // Quitar la HDR de pendientes del fletero
+            if (fleteroSeleccionado != null)
             {
                 fleteroSeleccionado.HDRsAsignadas.Remove(hdrConfirmada);
-                PoblarListaHDR(hdrPendienteLIST, fleteroSeleccionado.HDRsAsignadas);
+
+                // Refrescar listado inferior
+                PoblarListaHDR(
+                    hdrPendienteLIST,
+                    fleteroSeleccionado.HDRsAsignadas);
             }
 
+            // Limpiar detalle
             guiaAsociadaLISTARendir.Items.Clear();
-            confirmarRendicion.Enabled = false;
+
+            resultadoCMB.Items.Clear();
             resultadoCMB.SelectedIndex = -1;
+
+            confirmarRendicion.Enabled = false;
+
+            MessageBox.Show(
+                $"HDR {hdrConfirmada.NumeroHDR} rendida correctamente.",
+                "Rendición",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
         }
 
-        private void emitirResumen_Click(object sender, EventArgs e)
+        //////////////////////////////////////////////////////////////////////////////////////    
+        // Deberíamos incluir esto?
+        private void otraAccion_Click(object sender, EventArgs e)
         {
             if (listViewHDR.SelectedItems.Count == 0)
             {
@@ -241,10 +322,63 @@ namespace TPP3_GrupoG.RendicionHDRUltimaMilla
 
             MessageBox.Show($"HDR {hdrSeleccionada.NumeroHDR} asignada correctamente al fletero {fleteroSeleccionado.Nombre}.", "Operación Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+        /////////////////////////////////////////////////////////////////////////////////////
 
+        private void emitirResumen_Click(object sender, EventArgs e)
+        {
+            // No hay HDR rendidas
+            if (hdrRendidas.Count == 0)
+            {
+                MessageBox.Show(
+                    "No existen hojas de ruta rendidas para emitir el resumen.",
+                    "Resumen",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+                return;
+            }
+
+            string mensaje =
+                $"Se emitió el resumen de {hdrRendidas.Count} hoja(s) de ruta rendida(s).";
+
+            MessageBox.Show(
+                mensaje,
+                "Resumen emitido",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+        }
+
+        private void resultadoCMB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Debe haber una guía seleccionada
+            if (guiaAsociadaLISTARendir.SelectedItems.Count == 0)
+                return;
+
+            // Debe haber un resultado seleccionado
+            if (resultadoCMB.SelectedIndex == -1)
+                return;
+
+            // Obtener la guía seleccionada
+            var item = guiaAsociadaLISTARendir.SelectedItems[0];
+            var guia = item.Tag as Guias;
+
+            if (guia == null)
+                return;
+
+            // Guardar el resultado en el modelo
+            guia.Resultado = resultadoCMB.Text;
+
+            // Mostrar el resultado en una segunda columna
+            if (item.SubItems.Count == 1)
+                item.SubItems.Add(guia.Resultado);
+            else
+                item.SubItems[1].Text = guia.Resultado;
+        }
+
+        //???
         // Métodos vacíos obligatorios
         private void guiaAsociada_Click(object sender, EventArgs e) { }
-        private void resultadoCMB_SelectedIndexChanged(object sender, EventArgs e) { }
+        
         private void listView1_SelectedIndexChanged(object sender, EventArgs e) { }
 
     }
